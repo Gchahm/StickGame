@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://27m8ncp3ivkp"]
+
+[ext_resource type="Script" path="res://level.gd" id="1_22v65"]
+[ext_resource type="Script" path="res://sticks.gd" id="2_3gtxy"]
+[ext_resource type="Texture2D" uid="uid://kypkfq6yqt4x" path="res://icon.svg" id="3_8ylkc"]
+[ext_resource type="Script" path="res://box.gd" id="4_2aeo6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vybsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sn38o"]
+
+[node name="pair" type="Node2D"]
+script = ExtResource("1_22v65")
+
+[node name="fly" type="Area2D" parent="."]
+script = ExtResource("2_3gtxy")
+
+[node name="Icon" type="Sprite2D" parent="fly"]
+position = Vector2(-4.76837e-07, -4.76837e-07)
+scale = Vector2(0.173828, 0.173828)
+texture = ExtResource("3_8ylkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fly"]
+shape = SubResource("CircleShape2D_vybsp")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="box" type="Area2D" parent="."]
+position = Vector2(2, 137)
+script = ExtResource("4_2aeo6")
+
+[node name="Icon" type="Sprite2D" parent="box"]
+position = Vector2(-3.8147e-06, 1)
+scale = Vector2(0.1875, 0.1875)
+texture = ExtResource("3_8ylkc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="box"]
+shape = SubResource("RectangleShape2D_sn38o")
+
+[connection signal="area_entered" from="box" to="." method="_on_box_area_entered"]
+[connection signal="area_entered" from="box" to="box" method="_area_entered" flags=18]
