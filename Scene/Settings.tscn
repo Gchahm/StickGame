@@ -1,45 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://b08cklx0ohmms"]
+[gd_scene load_steps=4 format=3 uid="uid://d0g3cle2mlfim"]
 
-[ext_resource type="Script" path="res://Menu.gd" id="1_sispn"]
-[ext_resource type="Texture2D" uid="uid://dbv12i7f5jec8" path="res://Art/Background DALLE.png" id="2_64qis"]
+[ext_resource type="Texture2D" uid="uid://dbv12i7f5jec8" path="res://Art/Background DALLE.png" id="2_ndyqq"]
 
 [sub_resource type="FontFile" id="FontFile_ic64k"]
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/60/0 = Vector2(0, 0)
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/60/0/ascent = 0.0
 cache/0/60/0/descent = 0.0
 cache/0/60/0/underline_position = 0.0
 cache/0/60/0/underline_thickness = 0.0
 cache/0/60/0/scale = 1.0
+cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
 cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/60/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/60/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/40/0/ascent = 0.0
+cache/0/40/0/descent = 0.0
+cache/0/40/0/underline_position = 0.0
+cache/0/40/0/underline_thickness = 0.0
+cache/0/40/0/scale = 1.0
+cache/0/40/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/45/0/ascent = 0.0
+cache/0/45/0/descent = 0.0
+cache/0/45/0/underline_position = 0.0
+cache/0/45/0/underline_thickness = 0.0
+cache/0/45/0/scale = 1.0
+cache/0/45/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
 
 [sub_resource type="Theme" id="Theme_6lcva"]
 default_font = SubResource("FontFile_ic64k")
@@ -52,12 +54,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_sispn")
 
 [node name="BackgroundDalle" type="Sprite2D" parent="."]
-position = Vector2(634, 300)
+position = Vector2(655, 299)
 scale = Vector2(1.4, 1.4)
-texture = ExtResource("2_64qis")
+texture = ExtResource("2_ndyqq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -71,18 +72,24 @@ modulate = Color(1, 0.698039, 0.133333, 1)
 layout_mode = 2
 theme = SubResource("Theme_6lcva")
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Play"
+text = "Enable SFX"
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Options"
+text = "Music Volume"
 
-[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="HSlider2" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Effects Volume"
+
+[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Back"
