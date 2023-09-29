@@ -2,50 +2,10 @@
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_sispn"]
 [ext_resource type="Texture2D" uid="uid://dbv12i7f5jec8" path="res://Art/Background DALLE.png" id="2_64qis"]
-
-[sub_resource type="FontFile" id="FontFile_ic64k"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/45/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
+[ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="3_0e0jw"]
 
 [sub_resource type="Theme" id="Theme_6lcva"]
-default_font = SubResource("FontFile_ic64k")
+default_font = ExtResource("3_0e0jw")
 default_font_size = 60
 
 [node name="Control" type="Control"]
@@ -76,6 +36,7 @@ theme = SubResource("Theme_6lcva")
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_0e0jw")
 text = "Play"
 
 [node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]

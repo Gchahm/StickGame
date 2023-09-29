@@ -2,119 +2,12 @@
 
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_m6smm"]
 [ext_resource type="Texture2D" uid="uid://dbv12i7f5jec8" path="res://Art/Background DALLE.png" id="2_ndyqq"]
-
-[sub_resource type="FontFile" id="FontFile_ic64k"]
-subpixel_positioning = 0
-msdf_pixel_range = 14
-msdf_size = 128
-cache/0/60/0/ascent = 0.0
-cache/0/60/0/descent = 0.0
-cache/0/60/0/underline_position = 0.0
-cache/0/60/0/underline_thickness = 0.0
-cache/0/60/0/scale = 1.0
-cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/25/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/60/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/16/0/ascent = 0.0
-cache/0/16/0/descent = 0.0
-cache/0/16/0/underline_position = 0.0
-cache/0/16/0/underline_thickness = 0.0
-cache/0/16/0/scale = 1.0
-cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/25/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/16/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/40/0/ascent = 0.0
-cache/0/40/0/descent = 0.0
-cache/0/40/0/underline_position = 0.0
-cache/0/40/0/underline_thickness = 0.0
-cache/0/40/0/scale = 1.0
-cache/0/40/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/25/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/40/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/45/0/ascent = 0.0
-cache/0/45/0/descent = 0.0
-cache/0/45/0/underline_position = 0.0
-cache/0/45/0/underline_thickness = 0.0
-cache/0/45/0/scale = 1.0
-cache/0/45/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/25/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/45/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/13/0/ascent = 0.0
-cache/0/13/0/descent = 0.0
-cache/0/13/0/underline_position = 0.0
-cache/0/13/0/underline_thickness = 0.0
-cache/0/13/0/scale = 1.0
-cache/0/13/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/25/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/13/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/25/0/ascent = 0.0
-cache/0/25/0/descent = 0.0
-cache/0/25/0/underline_position = 0.0
-cache/0/25/0/underline_thickness = 0.0
-cache/0/25/0/scale = 1.0
-cache/0/25/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/25/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/25/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/25/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/25/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
-cache/0/25/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/25/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/30/0/ascent = 0.0
-cache/0/30/0/descent = 0.0
-cache/0/30/0/underline_position = 0.0
-cache/0/30/0/underline_thickness = 0.0
-cache/0/30/0/scale = 1.0
-cache/0/30/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/25/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/30/0/kerning_overrides/35/0 = Vector2(0, 0)
-cache/0/35/0/ascent = 0.0
-cache/0/35/0/descent = 0.0
-cache/0/35/0/underline_position = 0.0
-cache/0/35/0/underline_thickness = 0.0
-cache/0/35/0/scale = 1.0
-cache/0/35/0/kerning_overrides/60/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/16/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/40/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/45/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/13/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/25/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/30/0 = Vector2(0, 0)
-cache/0/35/0/kerning_overrides/35/0 = Vector2(0, 0)
+[ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="3_wxd3h"]
 
 [sub_resource type="Theme" id="Theme_6lcva"]
-default_font = SubResource("FontFile_ic64k")
-default_font_size = 60
+resource_local_to_scene = true
+default_font = ExtResource("3_wxd3h")
+default_font_size = 50
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -141,10 +34,15 @@ offset_bottom = 495.0
 modulate = Color(1, 0.698039, 0.133333, 1)
 layout_mode = 2
 theme = SubResource("Theme_6lcva")
+theme_override_constants/separation = 15
 
 [node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 40
 text = "Music Volume"
 
 [node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer"]
@@ -152,7 +50,11 @@ layout_mode = 2
 
 [node name="EffectsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 35
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 40
 text = "Effects Volume"
 
 [node name="Effects" type="HSlider" parent="MarginContainer/VBoxContainer"]
