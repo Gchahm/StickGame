@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d0g3cle2mlfim"]
+[gd_scene load_steps=5 format=3 uid="uid://d0g3cle2mlfim"]
 
+[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_m6smm"]
 [ext_resource type="Texture2D" uid="uid://dbv12i7f5jec8" path="res://Art/Background DALLE.png" id="2_ndyqq"]
 
 [sub_resource type="FontFile" id="FontFile_ic64k"]
@@ -15,6 +16,10 @@ cache/0/60/0/kerning_overrides/60/0 = Vector2(0, 0)
 cache/0/60/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/60/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/60/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/60/0/kerning_overrides/35/0 = Vector2(0, 0)
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -24,6 +29,10 @@ cache/0/16/0/kerning_overrides/60/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/16/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/35/0 = Vector2(0, 0)
 cache/0/40/0/ascent = 0.0
 cache/0/40/0/descent = 0.0
 cache/0/40/0/underline_position = 0.0
@@ -33,6 +42,10 @@ cache/0/40/0/kerning_overrides/60/0 = Vector2(0, 0)
 cache/0/40/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/40/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/40/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/40/0/kerning_overrides/35/0 = Vector2(0, 0)
 cache/0/45/0/ascent = 0.0
 cache/0/45/0/descent = 0.0
 cache/0/45/0/underline_position = 0.0
@@ -42,18 +55,75 @@ cache/0/45/0/kerning_overrides/60/0 = Vector2(0, 0)
 cache/0/45/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/45/0/kerning_overrides/40/0 = Vector2(0, 0)
 cache/0/45/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/45/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/13/0/ascent = 0.0
+cache/0/13/0/descent = 0.0
+cache/0/13/0/underline_position = 0.0
+cache/0/13/0/underline_thickness = 0.0
+cache/0/13/0/scale = 1.0
+cache/0/13/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/13/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/25/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/30/0/ascent = 0.0
+cache/0/30/0/descent = 0.0
+cache/0/30/0/underline_position = 0.0
+cache/0/30/0/underline_thickness = 0.0
+cache/0/30/0/scale = 1.0
+cache/0/30/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/30/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/35/0/kerning_overrides/60/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/40/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/45/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/13/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/30/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/35/0 = Vector2(0, 0)
 
 [sub_resource type="Theme" id="Theme_6lcva"]
 default_font = SubResource("FontFile_ic64k")
 default_font_size = 60
 
-[node name="Control" type="Control"]
+[node name="Settings" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m6smm")
 
 [node name="BackgroundDalle" type="Sprite2D" parent="."]
 position = Vector2(655, 299)
@@ -72,24 +142,26 @@ modulate = Color(1, 0.698039, 0.133333, 1)
 layout_mode = 2
 theme = SubResource("Theme_6lcva")
 
-[node name="CheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer"]
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Enable SFX"
-
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "Music Volume"
 
-[node name="HSlider2" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="Music" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="EffectsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 35
 text = "Effects Volume"
 
-[node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+[node name="Effects" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Back"
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Effects" to="." method="_on_effects_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
