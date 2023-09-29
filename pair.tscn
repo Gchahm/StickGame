@@ -23,10 +23,8 @@ texture = ExtResource("3_8ylkc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fly"]
 shape = SubResource("CircleShape2D_vybsp")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="box" type="Area2D" parent="."]
-position = Vector2(2, 137)
+position = Vector2(-1, 384)
 script = ExtResource("4_2aeo6")
 
 [node name="Icon" type="Sprite2D" parent="box"]
@@ -38,4 +36,3 @@ texture = ExtResource("3_8ylkc")
 shape = SubResource("RectangleShape2D_sn38o")
 
 [connection signal="area_entered" from="box" to="." method="_on_box_area_entered"]
-[connection signal="area_entered" from="box" to="box" method="_area_entered" flags=18]

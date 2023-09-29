@@ -1,15 +1,35 @@
 extends Node2D
 
+signal miss
+signal catch
+
+
 var pairs = []
 var timer:Timer
 var delta_sum := 0.0
 
 @export var curve:Curve
 
+func try_catch(fly_index) -> bool:
+	if fly_index >= pairs.size():
+		return false
+	
+	if fly_index < 0:
+		return false
+		
+	if not pairs[fly_index].flying:
+		return false
+	
+	pairs[fly_index].reset_fly()
+	
+	return true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for child in get_children():
+	for i in get_child_count():
+		var child = get_child(i)
 		pairs.push_back(child)
+		child.hit.connect(emit_signal.bind("miss", i))
 		
 	timer = Timer.new()
 	add_child(timer)

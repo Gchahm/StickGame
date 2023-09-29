@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://b08cklx0ohmms"]
+[gd_scene load_steps=5 format=3 uid="uid://cqybn3bobtx4t"]
 
 [ext_resource type="Script" path="res://Menu.gd" id="1_sispn"]
 [ext_resource type="Texture2D" uid="uid://dbv12i7f5jec8" path="res://Art/Background DALLE.png" id="2_64qis"]
 
 [sub_resource type="FontFile" id="FontFile_ic64k"]
+face_index = null
+embolden = null
+transform = null
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0

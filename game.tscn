@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://da88vf2c6p1mj"]
+
+[ext_resource type="PackedScene" uid="uid://d0gvu85ohf6wu" path="res://controls.tscn" id="1_7juxt"]
+[ext_resource type="Script" path="res://game.gd" id="1_lk7v8"]
+[ext_resource type="PackedScene" uid="uid://wuyu6j0dw6bl" path="res://flyman.tscn" id="2_oe86f"]
+
+[node name="game" type="Node2D"]
+script = ExtResource("1_lk7v8")
+
+[node name="flyman" parent="." instance=ExtResource("2_oe86f")]
+position = Vector2(484, 109)
+
+[node name="Controls" parent="." instance=ExtResource("1_7juxt")]
