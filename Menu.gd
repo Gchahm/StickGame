@@ -12,12 +12,14 @@ func _process(delta):
 
 
 func _on_play_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scene/main_score.tscn")
 
 
-func _on_button_pressed():
-	pass # Replace with function body.
+func _on_options_pressed():
+		get_tree().change_scene_to_file("res://Scene/Settings.tscn")
 
 
 func _on_quit_pressed():
 	get_tree().quit()
+
+
