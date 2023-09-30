@@ -15,27 +15,60 @@ offset_right = 1930.0
 offset_bottom = 1081.0
 color = Color(0.45098, 0.568627, 0.439216, 1)
 
+[node name="MarginContainer2" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -148.0
+offset_right = 313.0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+alignment = 2
+
+[node name="Level" type="Label" parent="ColorRect/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_evc7w")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 70
+text = "Level"
+
+[node name="Level_Value" type="Label" parent="ColorRect/MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_evc7w")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 120
+text = "1"
+
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = -494.0
-offset_bottom = 148.0
+offset_top = -148.0
 grow_horizontal = 0
+grow_vertical = 0
 size_flags_horizontal = 0
 
 [node name="Fire" parent="ColorRect/MarginContainer" instance=ExtResource("4_l5h0d")]
-position = Vector2(-545, 203)
+position = Vector2(-677, -704)
 
 [node name="Fire2" parent="ColorRect/MarginContainer" instance=ExtResource("4_l5h0d")]
-position = Vector2(-545, 203)
-
-[node name="Fire3" parent="ColorRect/MarginContainer" instance=ExtResource("4_l5h0d")]
-position = Vector2(-545, 203)
-
-[node name="Fire4" parent="ColorRect/MarginContainer" instance=ExtResource("4_l5h0d")]
-position = Vector2(-545, 203)
+position = Vector2(-677, -704)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
@@ -62,7 +95,7 @@ theme_override_constants/shadow_offset_x = 4
 theme_override_constants/shadow_offset_y = 4
 theme_override_fonts/font = ExtResource("1_ss8gt")
 theme_override_font_sizes/font_size = 120
-text = "100"
+text = "0"
 
 [node name="TempMessage" type="Label" parent="ColorRect"]
 layout_mode = 1
@@ -84,38 +117,6 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
-autowrap_mode = 1
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 313.0
-offset_bottom = 76.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 4
-theme_override_constants/separation = 25
-alignment = 2
-
-[node name="Level" type="Label" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_evc7w")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 4
-theme_override_constants/shadow_offset_y = 4
-theme_override_font_sizes/font_size = 70
-text = "Level"
-
-[node name="Level_Value" type="Label" parent="MarginContainer/HBoxContainer"]
-layout_mode = 2
-theme = ExtResource("1_evc7w")
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 4
-theme_override_constants/shadow_offset_y = 4
-theme_override_font_sizes/font_size = 120
-text = "1"
 
 [node name="Plus Score" type="Button" parent="."]
 offset_left = 557.0
@@ -166,7 +167,11 @@ offset_right = 963.0
 offset_bottom = 549.0
 
 [node name="scoreTextTimer" type="Timer" parent="."]
+wait_time = 5.0
 one_shot = true
+
+[node name="incrementScore" type="Timer" parent="."]
+wait_time = 0.001
 
 [connection signal="pressed" from="Plus Score" to="." method="_on_plus_score_pressed"]
 [connection signal="pressed" from="Minus Score" to="." method="_on_minus_score_pressed"]
@@ -174,3 +179,4 @@ one_shot = true
 [connection signal="pressed" from="Plus Level" to="." method="_on_plus_level_pressed"]
 [connection signal="pressed" from="Minus Level" to="." method="_on_minus_level_pressed"]
 [connection signal="timeout" from="scoreTextTimer" to="." method="_on_score_text_timer_timeout"]
+[connection signal="timeout" from="incrementScore" to="." method="_on_increment_score_timeout"]
