@@ -30,5 +30,8 @@ func StartAmbientSounds():
 func StopAmbientSounds():
 	$Ambience.stop()
 
-func Eat():
+func Slurp():
 	$Slurp.play() 
+	
+func Snack():
+	$Snack.play() 

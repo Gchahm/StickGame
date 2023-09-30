@@ -17,7 +17,7 @@ func _on_play_pressed():
 
 
 func _on_options_pressed():
-	audioscene.Eat()
+	audioscene.Slurp()
 	get_tree().change_scene_to_file("res://Scene/Settings.tscn")
 
 
