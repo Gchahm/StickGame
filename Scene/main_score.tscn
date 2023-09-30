@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ddxk81oxvet8c"]
+[gd_scene load_steps=7 format=3 uid="uid://ddxk81oxvet8c"]
 
 [ext_resource type="Script" path="res://Scripts/main_score.gd" id="1_57e5y"]
 [ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="1_evc7w"]
 [ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="1_ss8gt"]
 [ext_resource type="Theme" uid="uid://cgs71wm4c5bna" path="res://Art/Themes/ButtonTheme.tres" id="3_bicri"]
+[ext_resource type="PackedScene" uid="uid://dabilb2n1kutx" path="res://Scene/fire.tscn" id="4_l5h0d"]
 [ext_resource type="PackedScene" uid="uid://cwn64tc4y7o7y" path="res://Scene/game_over_screen.tscn" id="5_0uvyv"]
 
 [node name="Main_Score" type="Node2D"]
@@ -19,10 +20,13 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -276.0
-offset_bottom = 76.0
+offset_left = -494.0
+offset_bottom = 148.0
 grow_horizontal = 0
 size_flags_horizontal = 0
+
+[node name="Fire" parent="ColorRect/MarginContainer" instance=ExtResource("4_l5h0d")]
+position = Vector2(-558, 128)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
@@ -124,6 +128,7 @@ theme = ExtResource("3_bicri")
 text = "Level - 1"
 
 [node name="GameOverScreen" parent="." instance=ExtResource("5_0uvyv")]
+visible = false
 offset_left = 963.0
 offset_top = 549.0
 offset_right = 963.0

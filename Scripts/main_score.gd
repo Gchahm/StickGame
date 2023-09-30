@@ -16,11 +16,13 @@ func _ready():
 
 func _on_plus_score_pressed():
 	score += 1000
+	$Fire/GPUParticles2D.process_material.initial_velocity_min += 50
 	$ColorRect/MarginContainer/HBoxContainer/Score_Value.text = str(score)
 
 
 func _on_minus_score_pressed():
 	score -= 1000
+	$Fire/GPUParticles2D.process_material.initial_velocity_min -= 50
 	$ColorRect/MarginContainer/HBoxContainer/Score_Value.text = str(score)
 
 
@@ -40,5 +42,6 @@ func _on_game_over_pressed():
 	if score > highscore:
 		highscore = score
 	$GameOverScreen.display_scores(score, highscore)
+	
 	save_game()
 	$GameOverScreen.visible = true
