@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://27m8ncp3ivkp"]
+[gd_scene load_steps=8 format=3 uid="uid://27m8ncp3ivkp"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_22v65"]
 [ext_resource type="Script" path="res://sticks.gd" id="2_3gtxy"]
@@ -8,6 +8,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_vybsp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn38o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jj2md"]
+size = Vector2(20, 268)
 
 [node name="pair" type="Node2D"]
 script = ExtResource("1_22v65")
@@ -35,4 +38,12 @@ texture = ExtResource("3_8ylkc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box"]
 shape = SubResource("RectangleShape2D_sn38o")
 
+[node name="HitBox" type="Area2D" parent="."]
+position = Vector2(0, 147)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_jj2md")
+
 [connection signal="area_entered" from="box" to="." method="_on_box_area_entered"]
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="area_exited" from="HitBox" to="." method="_on_hit_box_area_exited"]
