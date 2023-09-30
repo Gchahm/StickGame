@@ -2,6 +2,7 @@ extends Node2D
 
 signal miss
 signal catch
+signal sting
 
 
 var pairs = []
@@ -20,6 +21,11 @@ func try_catch(fly_index) -> bool:
 	if not pairs[fly_index].flying:
 		return false
 	
+	if pairs[fly_index].is_wasp:
+		sting.emit(fly_index)
+	else:
+		catch.emit(fly_index)
+		
 	pairs[fly_index].reset_fly()
 	
 	return true
@@ -35,12 +41,12 @@ func _ready():
 	add_child(timer)
 	timer.timeout.connect(flytime)
 	timer.one_shot = true
-	timer.start(curve.sample(delta_sum * 0.025))
+	timer.start(curve.sample(delta_sum * 0.0005))
 
 
 func flytime():
 	pairs.pick_random().flying = true
-	timer.start(curve.sample(delta_sum * 0.025))
+	timer.start(curve.sample(delta_sum * 0.0005))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
