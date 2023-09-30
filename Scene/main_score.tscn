@@ -1,17 +1,10 @@
-<<<<<<< Updated upstream
-[gd_scene load_steps=3 format=3 uid="uid://ddxk81oxvet8c"]
-
-[ext_resource type="Script" path="res://Scripts/Score.gd" id="1_slkwl"]
-[ext_resource type="Script" path="res://Scripts/Level.gd" id="2_cbg2v"]
-=======
 [gd_scene load_steps=6 format=3 uid="uid://ddxk81oxvet8c"]
 
 [ext_resource type="Script" path="res://Scripts/main_score.gd" id="1_blu2e"]
-[ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="1_evc7w"]
-[ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="1_ss8gt"]
+[ext_resource type="Theme" path="res://Art/Themes/FontTheme.tres" id="1_evc7w"]
+[ext_resource type="FontFile" path="res://Art/fonts/Xolonium-Regular.ttf" id="1_ss8gt"]
 [ext_resource type="PackedScene" uid="uid://dyk55fvityi84" path="res://Scene/game_over_screen.tscn" id="2_vwh6y"]
-[ext_resource type="Theme" uid="uid://cgs71wm4c5bna" path="res://Art/Themes/ButtonTheme.tres" id="4_srjoa"]
->>>>>>> Stashed changes
+[ext_resource type="Theme" path="res://Art/Themes/ButtonTheme.tres" id="4_srjoa"]
 
 [node name="Main_Score" type="Node2D"]
 script = ExtResource("1_blu2e")
@@ -23,8 +16,6 @@ offset_right = 1919.0
 offset_bottom = 1082.0
 color = Color(0.45098, 0.568627, 0.439216, 1)
 
-<<<<<<< Updated upstream
-=======
 [node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
 anchors_preset = 1
@@ -62,7 +53,6 @@ theme_override_fonts/font = ExtResource("1_ss8gt")
 theme_override_font_sizes/font_size = 120
 text = "100"
 
->>>>>>> Stashed changes
 [node name="Plus Score" type="Button" parent="."]
 offset_left = 307.0
 offset_top = 561.0
@@ -79,24 +69,6 @@ offset_bottom = 706.0
 theme = ExtResource("4_srjoa")
 text = "Score - 1000"
 
-<<<<<<< Updated upstream
-[node name="Score" type="RichTextLabel" parent="."]
-offset_left = 898.0
-offset_top = 12.0
-offset_right = 1146.0
-offset_bottom = 57.0
-script = ExtResource("1_slkwl")
-
-[node name="Level" type="RichTextLabel" parent="."]
-offset_left = 36.0
-offset_top = 19.0
-offset_right = 191.0
-offset_bottom = 59.0
-script = ExtResource("2_cbg2v")
-
-[connection signal="pressed" from="Plus Score" to="Score" method="_on_plus_score_pressed"]
-[connection signal="pressed" from="Minus Score" to="Score" method="_on_minus_score_pressed"]
-=======
 [node name="Plus Level" type="Button" parent="."]
 offset_left = 317.0
 offset_top = 872.0
@@ -156,4 +128,3 @@ text = "1"
 [connection signal="pressed" from="Plus Level" to="." method="_on_plus_level_pressed"]
 [connection signal="pressed" from="Minus Level" to="." method="_on_minus_level_pressed"]
 [connection signal="pressed" from="GameOver" to="." method="_on_game_over_pressed"]
->>>>>>> Stashed changes
