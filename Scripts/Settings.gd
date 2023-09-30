@@ -3,10 +3,10 @@ extends Control
 func _ready():
 	$MarginContainer/VBoxContainer/Music.value = 30
 	$MarginContainer/VBoxContainer/Effects.value = 30
-
+	
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Scene/Menu.tscn")
-
+	
 
 func _on_effects_value_changed(value):
 	AudioServer.set_bus_volume_db(2, linear_to_db(value))

@@ -1,8 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://d0g3cle2mlfim"]
+[gd_scene load_steps=9 format=3 uid="uid://d0g3cle2mlfim"]
 
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_m6smm"]
 [ext_resource type="Texture2D" uid="uid://dbv12i7f5jec8" path="res://Art/Background DALLE.png" id="2_ndyqq"]
+[ext_resource type="Shader" path="res://Scene/TitleShader.gdshader" id="3_myw8h"]
 [ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="3_wxd3h"]
+[ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="4_3shgm"]
+[ext_resource type="Theme" uid="uid://cgs71wm4c5bna" path="res://Art/Themes/ButtonTheme.tres" id="4_jy87o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gckfx"]
+shader = ExtResource("3_myw8h")
+shader_parameter/height = 5.0
+shader_parameter/frequency = 5.0
+shader_parameter/speed = 5.0
 
 [sub_resource type="Theme" id="Theme_6lcva"]
 resource_local_to_scene = true
@@ -19,25 +28,54 @@ grow_vertical = 2
 script = ExtResource("1_m6smm")
 
 [node name="BackgroundDalle" type="Sprite2D" parent="."]
-position = Vector2(655, 299)
-scale = Vector2(1.4, 1.4)
+position = Vector2(961.2, 544.15)
+scale = Vector2(2.25594, 2.19501)
 texture = ExtResource("2_ndyqq")
+region_enabled = true
+region_rect = Rect2(34.1705, 223.173, 858.495, 501.827)
+
+[node name="Title" type="Label" parent="."]
+material = SubResource("ShaderMaterial_gckfx")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.5
+offset_right = 640.5
+offset_bottom = 166.0
+grow_horizontal = 2
+theme = ExtResource("4_3shgm")
+theme_override_colors/font_color = Color(0.79097, 0.589717, 1.15514e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 135
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 95.0
-offset_top = 220.0
-offset_right = 426.0
-offset_bottom = 495.0
+offset_left = 120.0
+offset_top = 250.0
+offset_right = 442.0
+offset_bottom = 535.0
+scale = Vector2(1.8, 2.3)
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.227451, 0.266667, 0.4, 0.592157)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-modulate = Color(1, 0.698039, 0.133333, 1)
 layout_mode = 2
 theme = SubResource("Theme_6lcva")
-theme_override_constants/separation = 15
+theme_override_constants/separation = 25
 
 [node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_3shgm")
+theme_override_colors/font_color = Color(0.757813, 0.566406, 0.0234375, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
@@ -50,6 +88,7 @@ layout_mode = 2
 
 [node name="EffectsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.79097, 0.589717, 1.15514e-06, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
@@ -62,6 +101,7 @@ layout_mode = 2
 
 [node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("4_jy87o")
 text = "Back"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/Music" to="." method="_on_music_value_changed"]

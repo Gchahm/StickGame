@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddxk81oxvet8c"]
 
-[ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://FontTheme.tres" id="1_5jro4"]
+[ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="1_evc7w"]
 [ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="1_ss8gt"]
 [ext_resource type="Script" path="res://Scripts/Score_Label.gd" id="3_hopig"]
 [ext_resource type="Script" path="res://Scripts/Level_Label.gd" id="4_5e355"]
@@ -30,7 +30,7 @@ alignment = 2
 
 [node name="Score" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_5jro4")
+theme = ExtResource("1_evc7w")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
@@ -39,7 +39,7 @@ text = "Score"
 
 [node name="Score_Value" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_5jro4")
+theme = ExtResource("1_evc7w")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
@@ -68,7 +68,7 @@ offset_left = 34.0
 offset_top = 27.0
 offset_right = 204.0
 offset_bottom = 79.0
-theme = ExtResource("1_5jro4")
+theme = ExtResource("1_evc7w")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 4
