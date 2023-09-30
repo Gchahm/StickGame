@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="StickGame"
-run/main_scene="res://Scene/Menu.tscn"
+run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://MasterAudioBusLayout.tres"
+
+[autoload]
+
+AudioScene="*res://Igor/AudioScene.tscn"
 
 [display]
 

@@ -8,6 +8,7 @@
 script = ExtResource("1_lk7v8")
 
 [node name="flyman" parent="." instance=ExtResource("2_oe86f")]
-position = Vector2(484, 109)
+position = Vector2(504, 111)
 
 [node name="Controls" parent="." instance=ExtResource("1_7juxt")]
+position = Vector2(18, 4)
