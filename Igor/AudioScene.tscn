@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2hp7urooiif1"]
+
+[ext_resource type="Script" path="res://Igor/AudioScene.gd" id="1_0awpg"]
+[ext_resource type="AudioStream" uid="uid://3ry8wu6gyf3m" path="res://letter-from-brazil-168685.mp3" id="2_my60h"]
+
+[node name="AudioScene" type="Node2D"]
+script = ExtResource("1_0awpg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_my60h")
+autoplay = true
+bus = &"Music"

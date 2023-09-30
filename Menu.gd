@@ -3,8 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	AudioServer.set_bus_volume_db(0, 50)
-	print (AudioServer.get_bus_volume_db(0))
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,15 +1,15 @@
 extends Control
 
 func _ready():
-	$MarginContainer/VBoxContainer/Music.value = 30
-	$MarginContainer/VBoxContainer/Effects.value = 30
+	$MarginContainer/VBoxContainer/Music.value = 100
+	$MarginContainer/VBoxContainer/Effects.value = 100
 	
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Scene/Menu.tscn")
 	
 
 func _on_effects_value_changed(value):
-	AudioServer.set_bus_volume_db(2, linear_to_db(value))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SoundFx"), linear_to_db(value / 100))
 	var adjusted_value_fx = value * 0.6
 	if adjusted_value_fx < 35:
 		adjusted_value_fx = 35
@@ -19,7 +19,7 @@ func _on_effects_value_changed(value):
 	print (adjusted_value_fx)
 
 func _on_music_value_changed(value):
-	AudioServer.set_bus_volume_db(1, linear_to_db(value))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(value / 100))
 	var adjusted_value_vol = value * 0.6
 	if adjusted_value_vol < 35:
 		adjusted_value_vol = 35
