@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ddxk81oxvet8c"]
+[gd_scene load_steps=6 format=3 uid="uid://ddxk81oxvet8c"]
 
 [ext_resource type="Script" path="res://Scripts/main_score.gd" id="1_57e5y"]
 [ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="1_evc7w"]
 [ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="1_ss8gt"]
 [ext_resource type="Theme" uid="uid://cgs71wm4c5bna" path="res://Art/Themes/ButtonTheme.tres" id="3_bicri"]
+[ext_resource type="PackedScene" uid="uid://cwn64tc4y7o7y" path="res://Scene/game_over_screen.tscn" id="5_0uvyv"]
 
 [node name="Main_Score" type="Node2D"]
 script = ExtResource("1_57e5y")
@@ -121,6 +122,12 @@ offset_right = 1283.0
 offset_bottom = 935.0
 theme = ExtResource("3_bicri")
 text = "Level - 1"
+
+[node name="GameOverScreen" parent="." instance=ExtResource("5_0uvyv")]
+offset_left = 963.0
+offset_top = 549.0
+offset_right = 963.0
+offset_bottom = 549.0
 
 [connection signal="pressed" from="Plus Score" to="." method="_on_plus_score_pressed"]
 [connection signal="pressed" from="Minus Score" to="." method="_on_minus_score_pressed"]

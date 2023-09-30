@@ -1,0 +1,155 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwn64tc4y7o7y"]
+
+[ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="1_ia3yo"]
+[ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_m7qd5"]
+[ext_resource type="Theme" uid="uid://cgs71wm4c5bna" path="res://Art/Themes/ButtonTheme.tres" id="2_d7j4e"]
+[ext_resource type="Material" uid="uid://ma137r1dq1ss" path="res://Scene/FloatingFont.tres" id="2_v6ax4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqrrf"]
+bg_color = Color(0.792157, 0.588235, 0, 1)
+corner_radius_top_left = 140
+corner_radius_top_right = 140
+corner_radius_bottom_right = 140
+corner_radius_bottom_left = 140
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m7qd5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.568627)
+
+[node name="Panel" type="Panel" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -543.0
+offset_top = -464.0
+offset_right = 543.0
+offset_bottom = 464.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jqrrf")
+
+[node name="GameOver" type="Label" parent="ColorRect/Panel"]
+material = ExtResource("2_v6ax4")
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -408.0
+offset_top = 71.0
+offset_right = 405.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme = ExtResource("1_ia3yo")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 120
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MotivationalMessage" type="Label" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -408.0
+offset_top = -246.0
+offset_right = 405.0
+offset_bottom = -98.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ia3yo")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 6
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 35
+horizontal_alignment = 1
+
+[node name="VBox" type="VBoxContainer" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -195.0
+offset_top = -541.0
+offset_right = 195.0
+offset_bottom = -337.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="High-Score" type="Label" parent="ColorRect/Panel/VBox"]
+layout_mode = 2
+theme = ExtResource("1_ia3yo")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 80
+text = "Score: "
+
+[node name="Score" type="Label" parent="ColorRect/Panel/VBox"]
+layout_mode = 2
+theme = ExtResource("1_ia3yo")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 80
+text = "Hi-Score:"
+
+[node name="HBox" type="HBoxContainer" parent="ColorRect/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -182.0
+offset_right = 20.0
+offset_bottom = -142.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Retry" type="Button" parent="ColorRect/Panel/HBox"]
+layout_mode = 2
+theme = ExtResource("2_d7j4e")
+theme_override_font_sizes/font_size = 80
+text = "  Retry  "
+
+[node name="Quit" type="Button" parent="ColorRect/Panel/HBox"]
+layout_mode = 2
+theme = ExtResource("2_d7j4e")
+theme_override_font_sizes/font_size = 80
+text = "   Quit   "
+
+[connection signal="pressed" from="ColorRect/Panel/HBox/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="ColorRect/Panel/HBox/Quit" to="." method="_on_quit_pressed"]
