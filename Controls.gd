@@ -6,7 +6,7 @@ var labels = []
 var label_text_codes = [0,0,0,0,0,0]
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	labels.append($Label)
+	labels.append($Label1)
 	labels.append($Label2)
 	labels.append($Label3)
 	labels.append($Label4)
