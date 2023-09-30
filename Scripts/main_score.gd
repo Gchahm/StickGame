@@ -4,7 +4,7 @@ var score: int = 0
 var level: int = 1
 var highscore
 var targetScore: int = 0
-var motivationalWords = ["Madonna!", "Amazing!", "Amoeba!", "Unbeliveable!", "So good!", "Chicken!", "Aminoacid"]  
+var motivationalWords = ["Madonna!", "Superb!", "Flibbergabber!", "Unbeliveable!", "So good!", "Chicken!", "Professional!"]  
 var incrementAmount: int = 1
 # Called when the node enters the scene tree for the first time.
 
@@ -16,18 +16,20 @@ func _ready():
 	else:
 		highscore = 0
 		save_game()
-	$ColorRect/MarginContainer/Fire/GPUParticles2D.process_material.initial_velocity_min = 300
-	$ColorRect/MarginContainer/Fire/GPUParticles2D.process_material.initial_velocity_max = 300
+	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_min = 300
+	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_max = 300
+	$ColorRect/Fireworks.visible = false
 
 func _on_plus_score_pressed():
 	targetScore += 10
-	$ColorRect/MarginContainer/Fire/GPUParticles2D.process_material.initial_velocity_min += 10
+	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_min += 10
 	$incrementScore.start()	
 	if targetScore % 50 == 0:  
 		var randomIndex = randi() % motivationalWords.size()  
 		var randomMotivationalWord = motivationalWords[randomIndex]  
 		$ColorRect/TempMessage.text = randomMotivationalWord  # Show the score text  
 		$ColorRect/TempMessage.visible = true  # Show the score text  
+		$ColorRect/Fireworks.visible = true
 		$scoreTextTimer.start()  # Start the timer
 
 func _on_increment_score_timeout():
@@ -40,6 +42,7 @@ func _on_increment_score_timeout():
 
 func _on_score_text_timer_timeout():
 	$ColorRect/TempMessage.visible = false
+	$ColorRect/Fireworks.visible = false
 
 
 func _on_minus_score_pressed():
@@ -50,7 +53,7 @@ func _on_minus_score_pressed():
 
 func _on_plus_level_pressed():
 	level += 1
-	$MarginContainer/HBoxContainer/Level_Value.text = str(level)
+	$ColorRect/MarginContainer2/HBoxContainer/Level_Value.text = str(level)
 
 func save_game():
 	var save_file = FileAccess.open("user://save.data", FileAccess.WRITE)
@@ -58,7 +61,7 @@ func save_game():
 
 func _on_minus_level_pressed():
 	level -= 1
-	$MarginContainer/HBoxContainer/Level_Value.text = str(level)
+	$ColorRect/MarginContainer2/HBoxContainer/Level_Value.text = str(level)
 
 func _on_game_over_pressed():
 	if score > highscore:

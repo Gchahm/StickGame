@@ -38,8 +38,8 @@ color_ramp = SubResource("GradientTexture1D_4ajt5")
 
 [node name="Fire" type="Node2D"]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="Fire" type="GPUParticles2D" parent="."]
 position = Vector2(934, 830)
-amount = 800
+amount = 600
 process_material = SubResource("ParticleProcessMaterial_ltgxe")
 texture = ExtResource("1_5j8fl")

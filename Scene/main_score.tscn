@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddxk81oxvet8c"]
+[gd_scene load_steps=9 format=3 uid="uid://ddxk81oxvet8c"]
 
 [ext_resource type="Script" path="res://Scripts/main_score.gd" id="1_57e5y"]
 [ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="1_evc7w"]
@@ -6,6 +6,8 @@
 [ext_resource type="Theme" uid="uid://cgs71wm4c5bna" path="res://Art/Themes/ButtonTheme.tres" id="3_bicri"]
 [ext_resource type="PackedScene" uid="uid://dabilb2n1kutx" path="res://Scene/fire.tscn" id="4_l5h0d"]
 [ext_resource type="PackedScene" uid="uid://cwn64tc4y7o7y" path="res://Scene/game_over_screen.tscn" id="5_0uvyv"]
+[ext_resource type="Material" uid="uid://ma137r1dq1ss" path="res://Scene/FloatingFont.tres" id="5_e6h2c"]
+[ext_resource type="PackedScene" uid="uid://d01nnt3p1ip27" path="res://Scene/fireworks.tscn" id="6_q81yr"]
 
 [node name="Main_Score" type="Node2D"]
 script = ExtResource("1_57e5y")
@@ -17,12 +19,12 @@ color = Color(0.45098, 0.568627, 0.439216, 1)
 
 [node name="MarginContainer2" type="MarginContainer" parent="ColorRect"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -148.0
-offset_right = 313.0
-grow_vertical = 0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -313.0
+offset_bottom = 148.0
+grow_horizontal = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer2"]
 layout_mode = 2
@@ -98,17 +100,18 @@ theme_override_font_sizes/font_size = 120
 text = "0"
 
 [node name="TempMessage" type="Label" parent="ColorRect"]
+material = ExtResource("5_e6h2c")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -280.0
-offset_top = 156.0
-offset_right = 275.0
-offset_bottom = 279.0
+offset_left = -20.0
+offset_top = 97.0
+offset_right = 20.0
+offset_bottom = 217.0
 grow_horizontal = 2
 theme = ExtResource("1_evc7w")
-theme_override_colors/font_color = Color(0.65098, 0.517647, 0.215686, 1)
+theme_override_colors/font_color = Color(0.956863, 0.623529, 0.0980392, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
@@ -117,6 +120,9 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Fireworks" parent="ColorRect" instance=ExtResource("6_q81yr")]
+position = Vector2(265, -600)
 
 [node name="Plus Score" type="Button" parent="."]
 offset_left = 557.0
@@ -167,7 +173,7 @@ offset_right = 963.0
 offset_bottom = 549.0
 
 [node name="scoreTextTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 3.0
 one_shot = true
 
 [node name="incrementScore" type="Timer" parent="."]
