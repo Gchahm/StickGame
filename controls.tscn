@@ -1,78 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0gvu85ohf6wu"]
+[gd_scene load_steps=3 format=3 uid="uid://d0gvu85ohf6wu"]
 
 [ext_resource type="Script" path="res://Controls.gd" id="1_wicix"]
+[ext_resource type="PackedScene" uid="uid://bhvh5olqcsod3" path="res://gustavoch/Key.tscn" id="2_0xhs6"]
 
 [node name="Controls" type="Node2D"]
 script = ExtResource("1_wicix")
 
-[node name="Panel1" type="Panel" parent="."]
-offset_left = 128.0
-offset_top = 472.0
-offset_right = 168.0
-offset_bottom = 512.0
+[node name="Key" parent="." instance=ExtResource("2_0xhs6")]
+position = Vector2(120, 712)
 
-[node name="Panel2" type="Panel" parent="."]
-offset_left = 256.0
-offset_top = 472.0
-offset_right = 296.0
-offset_bottom = 512.0
+[node name="Key2" parent="." instance=ExtResource("2_0xhs6")]
+position = Vector2(432, 710)
 
-[node name="Panel3" type="Panel" parent="."]
-offset_left = 384.0
-offset_top = 472.0
-offset_right = 424.0
-offset_bottom = 512.0
+[node name="Key3" parent="." instance=ExtResource("2_0xhs6")]
+position = Vector2(814, 706)
 
-[node name="Panel4" type="Panel" parent="."]
-offset_left = 512.0
-offset_top = 472.0
-offset_right = 552.0
-offset_bottom = 512.0
+[node name="Key4" parent="." instance=ExtResource("2_0xhs6")]
+position = Vector2(1086, 714)
 
-[node name="Panel5" type="Panel" parent="."]
-offset_left = 640.0
-offset_top = 472.0
-offset_right = 680.0
-offset_bottom = 512.0
+[node name="Key5" parent="." instance=ExtResource("2_0xhs6")]
+position = Vector2(1354, 702)
 
-[node name="Panel6" type="Panel" parent="."]
-offset_left = 786.0
-offset_top = 472.0
-offset_right = 826.0
-offset_bottom = 512.0
-
-[node name="Label1" type="Label" parent="."]
-offset_left = 128.0
-offset_top = 488.0
-offset_right = 168.0
-offset_bottom = 511.0
-
-[node name="Label2" type="Label" parent="."]
-offset_left = 256.0
-offset_top = 488.0
-offset_right = 296.0
-offset_bottom = 511.0
-
-[node name="Label3" type="Label" parent="."]
-offset_left = 384.0
-offset_top = 488.0
-offset_right = 424.0
-offset_bottom = 511.0
-
-[node name="Label4" type="Label" parent="."]
-offset_left = 512.0
-offset_top = 488.0
-offset_right = 552.0
-offset_bottom = 511.0
-
-[node name="Label5" type="Label" parent="."]
-offset_left = 640.0
-offset_top = 488.0
-offset_right = 680.0
-offset_bottom = 511.0
-
-[node name="Label6" type="Label" parent="."]
-offset_left = 786.0
-offset_top = 488.0
-offset_right = 826.0
-offset_bottom = 511.0
+[node name="Key6" parent="." instance=ExtResource("2_0xhs6")]
+position = Vector2(1634, 728)
