@@ -12,6 +12,7 @@ var bonus_gravity = 20
 const GRAVITY_INCREASE := 2
 
 @export var curve:Curve
+@export var useSound:bool
 
 func try_catch(fly_index) -> bool:
 	if fly_index >= pairs.size():

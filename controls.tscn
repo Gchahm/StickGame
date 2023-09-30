@@ -10,16 +10,16 @@ script = ExtResource("1_wicix")
 position = Vector2(120, 712)
 
 [node name="Key2" parent="." instance=ExtResource("2_0xhs6")]
-position = Vector2(432, 710)
+position = Vector2(361, 713)
 
 [node name="Key3" parent="." instance=ExtResource("2_0xhs6")]
-position = Vector2(814, 706)
+position = Vector2(572, 716)
 
 [node name="Key4" parent="." instance=ExtResource("2_0xhs6")]
-position = Vector2(1086, 714)
+position = Vector2(942, 715)
 
 [node name="Key5" parent="." instance=ExtResource("2_0xhs6")]
-position = Vector2(1354, 702)
+position = Vector2(1160, 718)
 
 [node name="Key6" parent="." instance=ExtResource("2_0xhs6")]
-position = Vector2(1634, 728)
+position = Vector2(1384, 722)

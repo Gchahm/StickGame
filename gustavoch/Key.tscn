@@ -6,7 +6,7 @@
 script = ExtResource("1_r5nnq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(100, 100)
+position = Vector2(-73, 96)
 
 [node name="Polygon2D" type="Polygon2D" parent="Sprite2D"]
 position = Vector2(-100, -100)

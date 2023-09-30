@@ -8,23 +8,31 @@ _data = [Vector2(0.0232067, 1), 0.0, 0.0, 0, 0, Vector2(0.165468, 1), 0.0, 0.0, 
 point_count = 5
 
 [node name="flyman" type="Node2D"]
+position = Vector2(599, 69)
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_oxciu")
 curve = SubResource("Curve_hp5fl")
 
 [node name="pair1" parent="." instance=ExtResource("1_7ymxc")]
 position = Vector2(-337, 0)
+scale = Vector2(1.5, 1.5)
 
 [node name="pair2" parent="." instance=ExtResource("1_7ymxc")]
 position = Vector2(-211, 0)
+scale = Vector2(1.5, 1.5)
 
 [node name="pair3" parent="." instance=ExtResource("1_7ymxc")]
 position = Vector2(-77, 0)
+scale = Vector2(1.5, 1.5)
 
 [node name="pair4" parent="." instance=ExtResource("1_7ymxc")]
-position = Vector2(49, 0)
+position = Vector2(138, -4)
+scale = Vector2(1.5, 1.5)
 
 [node name="pair5" parent="." instance=ExtResource("1_7ymxc")]
-position = Vector2(179, 2)
+position = Vector2(264, -1.33333)
+scale = Vector2(1.5, 1.5)
 
 [node name="pair6" parent="." instance=ExtResource("1_7ymxc")]
-position = Vector2(314, 0)
+position = Vector2(417.333, -0.666664)
+scale = Vector2(1.5, 1.5)

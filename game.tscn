@@ -1,14 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://da88vf2c6p1mj"]
+[gd_scene load_steps=5 format=3 uid="uid://da88vf2c6p1mj"]
 
 [ext_resource type="PackedScene" uid="uid://d0gvu85ohf6wu" path="res://controls.tscn" id="1_7juxt"]
 [ext_resource type="Script" path="res://game.gd" id="1_lk7v8"]
 [ext_resource type="PackedScene" uid="uid://wuyu6j0dw6bl" path="res://flyman.tscn" id="2_oe86f"]
+[ext_resource type="Texture2D" uid="uid://bkbikrydvpyga" path="res://chameleon.jpg" id="4_3mcwj"]
 
 [node name="game" type="Node2D"]
+position = Vector2(345, 108)
 script = ExtResource("1_lk7v8")
 
 [node name="flyman" parent="." instance=ExtResource("2_oe86f")]
-position = Vector2(504, 111)
+position = Vector2(560, 81)
 
 [node name="Controls" parent="." instance=ExtResource("1_7juxt")]
-position = Vector2(18, 4)
+position = Vector2(-76, 8)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(616.111, 431.125)
+scale = Vector2(3.99907, 3.99907)
+texture = ExtResource("4_3mcwj")
