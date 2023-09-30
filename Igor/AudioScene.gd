@@ -9,3 +9,16 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func PauseMusic():
+	$AudioStreamPlayer.stream_paused = true
+
+func ResumeMusic():
+	$AudioStreamPlayer.stream_paused = false
+	
+func StartMusic():
+	$AudioStreamPlayer.play()
+	$AudioStreamPlayer.stream_paused = false
+
+func Eat():
+	$Slurp.play()

@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	$MarginContainer/VBoxContainer/Music.value = 100
-	$MarginContainer/VBoxContainer/Effects.value = 100
+	$MarginContainer/VBoxContainer/Music.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Music"))) * 100
+	$MarginContainer/VBoxContainer/Effects.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SoundFx"))) * 100
 	
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Scene/Menu.tscn")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2hp7urooiif1"]
+[gd_scene load_steps=4 format=3 uid="uid://b2hp7urooiif1"]
 
 [ext_resource type="Script" path="res://Igor/AudioScene.gd" id="1_0awpg"]
 [ext_resource type="AudioStream" uid="uid://3ry8wu6gyf3m" path="res://letter-from-brazil-168685.mp3" id="2_my60h"]
+[ext_resource type="AudioStream" uid="uid://0p122qiaykmu" path="res://Igor/SoundFx/573583__breviceps__cartoon-slurp.wav" id="3_wuvvy"]
 
 [node name="AudioScene" type="Node2D"]
 script = ExtResource("1_0awpg")
@@ -10,3 +11,7 @@ script = ExtResource("1_0awpg")
 stream = ExtResource("2_my60h")
 autoplay = true
 bus = &"Music"
+
+[node name="Slurp" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wuvvy")
+bus = &"SoundFx"
