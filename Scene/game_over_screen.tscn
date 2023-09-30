@@ -38,9 +38,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -543.0
-offset_top = -464.0
+offset_top = -378.0
 offset_right = 543.0
-offset_bottom = 464.0
+offset_bottom = 378.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_jqrrf")
@@ -91,17 +91,17 @@ horizontal_alignment = 1
 
 [node name="VBox" type="VBoxContainer" parent="ColorRect/Panel"]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
+anchor_bottom = 0.5
 offset_left = -195.0
-offset_top = -541.0
+offset_top = -102.0
 offset_right = 195.0
-offset_bottom = -337.0
+offset_bottom = 102.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 
 [node name="High-Score" type="Label" parent="ColorRect/Panel/VBox"]
 layout_mode = 2
@@ -132,10 +132,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -182.0
-offset_right = 20.0
-offset_bottom = -142.0
+offset_left = -334.0
+offset_top = -202.0
+offset_right = 334.0
+offset_bottom = -105.0
 grow_horizontal = 2
 grow_vertical = 0
 
