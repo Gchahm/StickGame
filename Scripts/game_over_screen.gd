@@ -11,16 +11,15 @@ func _process(delta):
 	pass
 
 
-func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Scene/main_score.tscn")
-
-
-func _on_options_pressed():
-		get_tree().change_scene_to_file("res://Scene/Settings.tscn")
-
-
-func _on_quit_pressed():
+func _on_rage_quit_pressed():
 	get_tree().quit()
+
+
+func _on_retry_pressed():
+	get_tree().reload_current_scene()
 	
-
-
+func set_score(value):
+	$Panel/Score.text = "Score: " + str(value)
+	
+func set_highscore(value):
+	$Panel/HighestScore.text = "Hi-Score: " +str(value)

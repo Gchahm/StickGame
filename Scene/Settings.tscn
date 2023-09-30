@@ -62,10 +62,22 @@ texture = ExtResource("2_ndyqq")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
+<<<<<<< Updated upstream
 offset_left = 95.0
 offset_top = 220.0
 offset_right = 426.0
 offset_bottom = 495.0
+=======
+offset_left = 120.0
+offset_top = 244.0
+offset_right = 442.0
+offset_bottom = 529.0
+scale = Vector2(2.2, 2.3)
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.227451, 0.266667, 0.4, 0.321569)
+>>>>>>> Stashed changes
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 modulate = Color(1, 0.698039, 0.133333, 1)
@@ -78,6 +90,16 @@ text = "Enable SFX"
 
 [node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+<<<<<<< Updated upstream
+=======
+theme = ExtResource("4_3shgm")
+theme_override_colors/font_color = Color(0.757813, 0.566406, 0.0234375, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 30
+>>>>>>> Stashed changes
 text = "Music Volume"
 
 [node name="HSlider2" type="HSlider" parent="MarginContainer/VBoxContainer"]
@@ -85,6 +107,15 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+<<<<<<< Updated upstream
+=======
+theme_override_colors/font_color = Color(0.79097, 0.589717, 1.15514e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 30
+>>>>>>> Stashed changes
 text = "Effects Volume"
 
 [node name="HSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]

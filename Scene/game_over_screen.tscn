@@ -1,0 +1,197 @@
+[gd_scene load_steps=13 format=3 uid="uid://dyk55fvityi84"]
+
+[ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="1_s0gol"]
+[ext_resource type="Script" path="res://Scripts/game_over_screen.gd" id="1_we7m7"]
+[ext_resource type="Texture2D" uid="uid://cdmsytmgcuikb" path="res://Art/GUI/GUI.png" id="2_grvyo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvrm3"]
+bg_color = Color(0.792157, 0.588235, 0, 0.780392)
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[sub_resource type="LabelSettings" id="LabelSettings_s23j0"]
+line_spacing = 10.0
+font = ExtResource("1_s0gol")
+font_size = 130
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3fcpv"]
+line_spacing = 10.0
+font = ExtResource("1_s0gol")
+font_size = 100
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2r4k3"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvw24"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nuhts"]
+texture = ExtResource("2_grvyo")
+region_rect = Rect2(145, 81, 46, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yj7gh"]
+texture = ExtResource("2_grvyo")
+region_rect = Rect2(145, 98, 46, 13)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wwwmf"]
+texture = ExtResource("2_grvyo")
+region_rect = Rect2(145, 113, 46, 14)
+
+[sub_resource type="Theme" id="Theme_b6w0j"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 2
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_s0gol")
+Button/styles/disabled = SubResource("StyleBoxFlat_2r4k3")
+Button/styles/focus = SubResource("StyleBoxFlat_jvw24")
+Button/styles/hover = SubResource("StyleBoxTexture_nuhts")
+Button/styles/normal = SubResource("StyleBoxTexture_yj7gh")
+Button/styles/pressed = SubResource("StyleBoxTexture_wwwmf")
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_we7m7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.490196)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.0
+offset_top = -391.0
+offset_right = 530.0
+offset_bottom = 391.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gvrm3")
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -378.0
+offset_top = 57.0
+offset_right = 378.0
+offset_bottom = 224.0
+grow_horizontal = 2
+scale = Vector2(0.991845, 0.998031)
+text = "Game Over"
+label_settings = SubResource("LabelSettings_s23j0")
+
+[node name="HighestScore" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -376.0
+offset_top = 263.0
+offset_right = 380.0
+offset_bottom = 430.0
+grow_horizontal = 2
+scale = Vector2(0.991845, 0.998031)
+text = "Hi-score: "
+label_settings = SubResource("LabelSettings_3fcpv")
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -374.0
+offset_top = 396.0
+offset_right = 382.0
+offset_bottom = 563.0
+grow_horizontal = 2
+scale = Vector2(0.991845, 0.998031)
+text = "Score:"
+label_settings = SubResource("LabelSettings_3fcpv")
+
+[node name="Retry" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 587.0
+offset_right = 259.0
+offset_bottom = 636.0
+scale = Vector2(3, 3)
+theme = SubResource("Theme_b6w0j")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Retry"
+
+[node name="RageQuit" type="Button" parent="Panel"]
+offset_left = 551.0
+offset_top = 586.0
+offset_right = 667.0
+offset_bottom = 635.0
+scale = Vector2(3, 3)
+theme = SubResource("Theme_b6w0j")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[connection signal="pressed" from="Panel/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="Panel/RageQuit" to="." method="_on_rage_quit_pressed"]
