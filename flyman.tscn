@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://wuyu6j0dw6bl"]
+
+[ext_resource type="PackedScene" uid="uid://27m8ncp3ivkp" path="res://pair.tscn" id="1_7ymxc"]
+[ext_resource type="Script" path="res://flyman.gd" id="1_oxciu"]
+
+[sub_resource type="Curve" id="Curve_hp5fl"]
+_data = [Vector2(0.0232067, 1), 0.0, 0.0, 0, 0, Vector2(0.165468, 1), 0.0, 0.0, 0, 0, Vector2(0.201439, 0.745454), 0.0, 0.0, 0, 0, Vector2(0.235012, 0.845455), 0.0, 0.0, 0, 0, Vector2(0.995204, 0.0545454), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="flyman" type="Node2D"]
+script = ExtResource("1_oxciu")
+curve = SubResource("Curve_hp5fl")
+
+[node name="pair1" parent="." instance=ExtResource("1_7ymxc")]
+position = Vector2(-337, 7)
+
+[node name="pair2" parent="." instance=ExtResource("1_7ymxc")]
+position = Vector2(-208, 5)
+
+[node name="pair3" parent="." instance=ExtResource("1_7ymxc")]
+position = Vector2(-77, 0)
+
+[node name="pair4" parent="." instance=ExtResource("1_7ymxc")]
+position = Vector2(49, 8)
+
+[node name="pair5" parent="." instance=ExtResource("1_7ymxc")]
+position = Vector2(175, 7)
