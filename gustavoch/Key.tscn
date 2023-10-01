@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhvh5olqcsod3"]
+[gd_scene load_steps=4 format=3 uid="uid://bhvh5olqcsod3"]
 
 [ext_resource type="Script" path="res://gustavoch/Key.gd" id="1_r5nnq"]
+[ext_resource type="Texture2D" uid="uid://ctc7xixle55jh" path="res://Art/LogTest.png" id="2_a6th8"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r58vl"]
 
@@ -9,12 +10,12 @@ position = Vector2(62, 43)
 script = ExtResource("1_r5nnq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.866667, 0.678431, 0.141176, 1)
 self_modulate = Color(0.0392157, 0.0392157, 0.0392157, 0.00392157)
 position = Vector2(100, 100)
 texture = SubResource("CanvasTexture_r58vl")
 region_enabled = true
-region_rect = Rect2(200, 200, 200, 200)
 
 [node name="Label" type="Label" parent="Sprite2D"]
 visible = false
@@ -27,3 +28,9 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="LogTest" type="Sprite2D" parent="."]
+self_modulate = Color(2, 2, 2, 1)
+position = Vector2(97, 125)
+texture = ExtResource("2_a6th8")
+offset = Vector2(0, -150)
