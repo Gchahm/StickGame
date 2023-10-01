@@ -1,6 +1,7 @@
 extends Node2D
 
 var score := 0
+@onready var score_scene = $Main_Score
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,16 +20,15 @@ func randomLetterOrNumber():
 	return random_char
 
 func _miss(fly_index):
-	score -= 5
-	pass#$Controls.update_box(fly_index, randomLetterOrNumber())
+	score_scene.update_score(-5)
 
 func _catch(fly_index):
-	score += 10
+	score_scene.update_score(10)
 	AudioScene.PlaySound(AudioScene.SoundType.Snack, null)
 	print("Catch: " + str(fly_index))
 
 func _sting(fly_index):
-	score -= 20
+	score_scene.update_score(-20)
 	# If my code is right, the second param will be the "fly" object for the relevant key
 	AudioScene.PlaySound(AudioScene.SoundType.Sting, $flyman.get_children()[fly_index].get_child(0))
 	print("Sting: " + str(fly_index))
