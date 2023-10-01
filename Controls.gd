@@ -1,7 +1,7 @@
 extends Node2D
 
 signal box_pressed
-@onready var buttons = self.get_children()
+@onready var buttons = self.get_child(0).get_children()
 
 var label_text_codes = [0,0,0,0,0,0]
 # Called when the node enters the scene tree for the first time.

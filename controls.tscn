@@ -1,25 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://d0gvu85ohf6wu"]
+[gd_scene load_steps=4 format=3 uid="uid://d0gvu85ohf6wu"]
 
 [ext_resource type="Script" path="res://Controls.gd" id="1_wicix"]
 [ext_resource type="PackedScene" uid="uid://bhvh5olqcsod3" path="res://gustavoch/Key.tscn" id="2_0xhs6"]
 
+[sub_resource type="Environment" id="Environment_1l42d"]
+background_mode = 3
+glow_enabled = true
+glow_strength = 1.65
+
 [node name="Controls" type="Node2D"]
 script = ExtResource("1_wicix")
 
-[node name="Key" parent="." instance=ExtResource("2_0xhs6")]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Key" parent="Node2D" instance=ExtResource("2_0xhs6")]
 position = Vector2(120, 712)
 
-[node name="Key2" parent="." instance=ExtResource("2_0xhs6")]
+[node name="Key2" parent="Node2D" instance=ExtResource("2_0xhs6")]
 position = Vector2(432, 710)
 
-[node name="Key3" parent="." instance=ExtResource("2_0xhs6")]
+[node name="Key3" parent="Node2D" instance=ExtResource("2_0xhs6")]
 position = Vector2(814, 706)
 
-[node name="Key4" parent="." instance=ExtResource("2_0xhs6")]
+[node name="Key4" parent="Node2D" instance=ExtResource("2_0xhs6")]
 position = Vector2(1086, 714)
 
-[node name="Key5" parent="." instance=ExtResource("2_0xhs6")]
+[node name="Key5" parent="Node2D" instance=ExtResource("2_0xhs6")]
 position = Vector2(1354, 702)
 
-[node name="Key6" parent="." instance=ExtResource("2_0xhs6")]
+[node name="Key6" parent="Node2D" instance=ExtResource("2_0xhs6")]
 position = Vector2(1634, 728)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1l42d")
