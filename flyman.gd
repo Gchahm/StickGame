@@ -50,6 +50,7 @@ func flytime():
 	var fly = pairs.pick_random()
 	fly.flying = true
 	fly.bonus_gravity = bonus_gravity
+	fly.start_sound()
 	bonus_gravity += GRAVITY_INCREASE
 	timer.start(curve.sample(delta_sum * 0.0005))
 

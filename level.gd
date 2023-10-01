@@ -9,6 +9,7 @@ var rand = RandomNumberGenerator.new()
 const GRAVITY = 9.8
 var bonus_gravity = 0
 var air_time = 0.0
+var soundObject
 
 func reset_fly():
 	is_wasp = rand.randf() <= 0.25
@@ -18,7 +19,13 @@ func reset_fly():
 	else:
 		$fly.modulate = Color.WHITE
 	flying = false
-	
+	soundObject.Stop()
+
+func start_sound():
+	if (soundObject != null):
+		soundObject.Stop()
+	soundObject = AudioScene.PlaySound(AudioScene.SoundType.Fly, $fly, rand.randf_range(0.0, 1.0))
+
 func _process(delta):
 	if flying:
 		air_time += delta

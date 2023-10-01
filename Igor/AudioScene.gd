@@ -8,9 +8,13 @@ class SoundObject:
 	
 	func Stop():
 		_audioStream.stop()
+		_audioStream.emit_signal("finished")
 
-var _minFlyPitch = 0.75
-var _maxFlyPitch = 1.25
+const _minFlyPitch = 0.75
+const _maxFlyPitch = 1.25
+const _maxFliesAtOnce = 2
+
+var _flies = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -55,6 +59,20 @@ func PlaySound(soundType, parentObject, speed = 0.5):
 	var newAudioStreamPlayer = playerToUse.duplicate()
 	var soundObject = SoundObject.new(newAudioStreamPlayer)
 	
+	var shouldMute = false
+	if (soundType == SoundType.Fly):
+		var count = 0
+		for i in range(_flies.size() - 1, -1, -1):
+			var f = _flies[i]
+			if f == null || f._audioStream == null || !f._audioStream.playing || f._audioStream.volume_db == linear_to_db(0):
+				_flies.remove_at(i)
+			else:
+				count += 1
+		_flies.push_back(soundObject)
+		count += 1
+		if (count > _maxFliesAtOnce):
+			shouldMute = true
+	
 	parentObject.add_child(soundObject._audioStream)
 
 	if (newAudioStreamPlayer is AudioStreamPlayer2D):
@@ -67,7 +85,8 @@ func PlaySound(soundType, parentObject, speed = 0.5):
 		#	print("Could not determine position for object")
 
 	newAudioStreamPlayer.pitch_scale = pitchScale
-	newAudioStreamPlayer.play()
+	if !shouldMute:
+		newAudioStreamPlayer.play()
 	newAudioStreamPlayer.finished.connect(queue_free.bind(newAudioStreamPlayer))
 	return soundObject
 
