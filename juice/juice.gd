@@ -14,3 +14,5 @@ static func flash(node:Node2D, count:int = 1):
 		tween.tween_property(node, "modulate", Color(100, 100, 100, 100), 0)
 		tween.tween_property(node, "modulate", Color.WHITE, 0).set_delay(0.1)
 		tween.tween_property(node, "modulate", Color.WHITE, 0).set_delay(0.1)
+		
+	return tween
