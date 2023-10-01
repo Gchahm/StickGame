@@ -1,12 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://dtl7yjdhrgv0k"]
+[gd_scene load_steps=12 format=3 uid="uid://ccnoeowimp54y"]
 
 [ext_resource type="Script" path="res://Scripts/main_score.gd" id="1_fp5i8"]
 [ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="2_evwq3"]
-[ext_resource type="PackedScene" uid="uid://b361467an5fuf" path="res://Scene/fire.tscn" id="3_4ibx4"]
+[ext_resource type="PackedScene" uid="uid://dabilb2n1kutx" path="res://Scene/fire.tscn" id="3_4ibx4"]
 [ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="4_slj51"]
-[ext_resource type="Material" path="res://Scene/FloatingFont.tres" id="5_fcvxy"]
-[ext_resource type="PackedScene" uid="uid://d4amlp74up6fq" path="res://Scene/fireworks.tscn" id="6_0j6el"]
-[ext_resource type="PackedScene" uid="uid://chflqfs3ponxi" path="res://Scene/game_over_screen.tscn" id="8_yyfaf"]
+[ext_resource type="Material" uid="uid://ma137r1dq1ss" path="res://Scene/FloatingFont.tres" id="5_fcvxy"]
+[ext_resource type="PackedScene" uid="uid://d01nnt3p1ip27" path="res://Scene/fireworks.tscn" id="6_0j6el"]
+[ext_resource type="PackedScene" uid="uid://cwn64tc4y7o7y" path="res://Scene/game_over_screen.tscn" id="8_yyfaf"]
 
 [sub_resource type="Gradient" id="Gradient_oee4m"]
 colors = PackedColorArray(0.996078, 0.760784, 0, 1, 1, 0, 0, 0)
