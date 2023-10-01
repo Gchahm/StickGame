@@ -11,6 +11,9 @@ var bonus_gravity = 0
 var air_time = 0.0
 var soundObject
 
+func _ready() -> void:
+	$fly/AnimatedSprite2D.play()
+
 func reset_fly():
 	is_wasp = rand.randf() <= 0.25
 	$fly.position = Vector2.ZERO

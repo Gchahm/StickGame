@@ -16,7 +16,7 @@ void fragment() {
 
 	
 	
-	COLOR.a = r * 0.1;
+	COLOR.a = r * 0.25;
 	
 	// vin
 	

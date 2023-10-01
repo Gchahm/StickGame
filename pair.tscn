@@ -1,33 +1,76 @@
-[gd_scene load_steps=8 format=3 uid="uid://27m8ncp3ivkp"]
+[gd_scene load_steps=16 format=3 uid="uid://27m8ncp3ivkp"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_22v65"]
+[ext_resource type="Texture2D" uid="uid://bnix4qaqjdajl" path="res://Art/sprites/Bush00.png" id="2_2y2i1"]
 [ext_resource type="Script" path="res://sticks.gd" id="2_3gtxy"]
 [ext_resource type="Texture2D" uid="uid://kypkfq6yqt4x" path="res://icon.svg" id="3_8ylkc"]
+[ext_resource type="Texture2D" uid="uid://ct12tt3m60j27" path="res://Art/sprites/Bush01.png" id="3_lnvbq"]
 [ext_resource type="Script" path="res://box.gd" id="4_2aeo6"]
+[ext_resource type="Texture2D" uid="uid://0tsrjwwcbx7t" path="res://Art/sprites/Bush02.png" id="4_wwnei"]
+[ext_resource type="Texture2D" uid="uid://bovfngrgqtt2m" path="res://Art/sprites/Bush03.png" id="5_mv3lu"]
+[ext_resource type="Texture2D" uid="uid://bkkxyk2768whx" path="res://Art/sprites/Wasp01.png" id="7_j0485"]
+[ext_resource type="Texture2D" uid="uid://buk7wk0c88ieq" path="res://Art/sprites/Wasp02.png" id="8_lm52h"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s57xm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2y2i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lnvbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wwnei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mv3lu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vybsp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utjqd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_j0485")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lm52h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn38o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jj2md"]
-size = Vector2(20, 268)
+size = Vector2(20, 600)
 
 [node name="pair" type="Node2D"]
 script = ExtResource("1_22v65")
 
+[node name="Bush" type="AnimatedSprite2D" parent="."]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_s57xm")
+frame_progress = 0.438056
+
 [node name="fly" type="Area2D" parent="."]
 script = ExtResource("2_3gtxy")
-
-[node name="Icon" type="Sprite2D" parent="fly"]
-position = Vector2(-4.76837e-07, -4.76837e-07)
-scale = Vector2(0.173828, 0.173828)
-texture = ExtResource("3_8ylkc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="fly"]
 shape = SubResource("CircleShape2D_vybsp")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fly"]
+sprite_frames = SubResource("SpriteFrames_utjqd")
+
 [node name="box" type="Area2D" parent="."]
-position = Vector2(-1, 384)
+position = Vector2(0, 1332)
 script = ExtResource("4_2aeo6")
 
 [node name="Icon" type="Sprite2D" parent="box"]
@@ -42,6 +85,7 @@ shape = SubResource("RectangleShape2D_sn38o")
 position = Vector2(0, 147)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 166)
 shape = SubResource("RectangleShape2D_jj2md")
 
 [connection signal="area_entered" from="box" to="." method="_on_box_area_entered"]

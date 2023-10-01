@@ -8,8 +8,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("click"):
-		PointPopin.popin(self, get_global_mouse_position(), "nom")
+	pass
+	#if Input.is_action_just_pressed("click"):
+	#	PointPopin.popin(self, get_global_mouse_position(), "nom")
 
 
 func _squish_pressed():
