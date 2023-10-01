@@ -28,7 +28,8 @@ func _process(delta):
 enum SoundType {
 	Slurp,
 	Snack,
-	Fly
+	Fly,
+	Sting
 }
 
 enum Music {
@@ -52,9 +53,14 @@ func PlaySound(soundType, parentObject, speed = 0.5):
 			playerToUse = $Slurp
 		SoundType.Snack:
 			playerToUse = $Snack
+		SoundType.Sting:
+			playerToUse = $Scream
 		SoundType.Fly:
 			playerToUse = $Fly
 			pitchScale = _minFlyPitch + ((_maxFlyPitch - _minFlyPitch) * speed)
+		_:
+			print("SoundType '" + str(soundType )+ "' not defined")
+			
 	
 	var newAudioStreamPlayer = playerToUse.duplicate()
 	var soundObject = SoundObject.new(newAudioStreamPlayer)

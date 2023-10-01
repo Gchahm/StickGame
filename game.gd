@@ -30,7 +30,7 @@ func _catch(fly_index):
 func _sting(fly_index):
 	score -= 20
 	# If my code is right, the second param will be the "fly" object for the relevant key
-	AudioScene.PlaySound(AudioScene.SoundType.Slurp, $flyman.get_children()[fly_index].get_child(0))
+	AudioScene.PlaySound(AudioScene.SoundType.Sting, $flyman.get_children()[fly_index].get_child(0))
 	print("Sting: " + str(fly_index))
 
 func _box_pressed(box_index):
