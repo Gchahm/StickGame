@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://da88vf2c6p1mj"]
+[gd_scene load_steps=19 format=3 uid="uid://da88vf2c6p1mj"]
 
 [ext_resource type="PackedScene" uid="uid://d0gvu85ohf6wu" path="res://controls.tscn" id="1_7juxt"]
 [ext_resource type="Script" path="res://game.gd" id="1_lk7v8"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://wuyu6j0dw6bl" path="res://flyman.tscn" id="2_oe86f"]
 [ext_resource type="Shader" path="res://juice/grad.gdshader" id="3_f215n"]
 [ext_resource type="Texture2D" uid="uid://dytfoolfwn5v0" path="res://Art/sprites/path.png" id="6_iuxaw"]
+[ext_resource type="Shader" path="res://juice/camo.gdshader" id="7_dpep2"]
+[ext_resource type="Texture2D" uid="uid://bvepwl0t0umwb" path="res://Art/sprites/MicrosoftTeams-image (15).png" id="7_ehf2k"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_m7fca"]
 
@@ -40,6 +42,35 @@ turbulence_noise_speed = Vector3(0.5, 0, 0)
 turbulence_influence_min = 0.01
 turbulence_initial_displacement_min = -54.2
 turbulence_initial_displacement_max = 19.7
+
+[sub_resource type="Gradient" id="Gradient_iuxky"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.331325, 0.650602)
+colors = PackedColorArray(7.21961e-07, 0.58622, 0.0824606, 1, 1, 0.656714, 0.835973, 1, 1, 0.976471, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_u8wnw"]
+gradient = SubResource("Gradient_iuxky")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_y64dx"]
+noise_type = 5
+frequency = 0.139
+fractal_type = 3
+fractal_octaves = 7
+fractal_lacunarity = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lxlw2"]
+width = 256
+height = 256
+seamless = true
+as_normal_map = true
+bump_strength = 7.5
+noise = SubResource("FastNoiseLite_y64dx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqmyj"]
+shader = ExtResource("7_dpep2")
+shader_parameter/lcd = 1.0
+shader_parameter/colors = SubResource("GradientTexture2D_u8wnw")
+shader_parameter/pattern = SubResource("NoiseTexture2D_lxlw2")
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_lk7v8")
@@ -78,3 +109,10 @@ position = Vector2(18, 4)
 z_index = -1
 texture = ExtResource("6_iuxaw")
 centered = false
+
+[node name="Cham" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qqmyj")
+position = Vector2(942, 905)
+scale = Vector2(0.5734, 0.5734)
+texture = ExtResource("7_ehf2k")
+hframes = 3
