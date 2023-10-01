@@ -1,15 +1,10 @@
 extends Node2D
 
+class_name game
+
 var score := 0
+signal level_increased
 
-var _lastSlurpResult = SlurpResult.None
-var _blockRemovingSound = false
-
-enum SlurpResult {
-	None,
-	Yummy,
-	Owie
-}
 	
 @onready var score_scene = $Main_Score
 
@@ -32,35 +27,29 @@ func randomLetterOrNumber():
 func _miss(fly_index):
 
 	score_scene.update_score(-5)
-	if _blockRemovingSound == false:
-		_lastSlurpResult = SlurpResult.None
 	pass#$Controls.update_box(fly_index, randomLetterOrNumber())
 
 func _catch(fly_index):
-	score_scene.update_score(10)
-	_lastSlurpResult = SlurpResult.Yummy
+	if score_scene.update_score(10) == true:
+		level_increased.emit()
 	print("Catch: " + str(fly_index))
 
 func _sting(fly_index):
 	score_scene.update_score(-20)
 	# If my code is right, the second param will be the "fly" object for the relevant key
 	#AudioScene.PlaySound(AudioScene.SoundType.Sting, $flyman.get_children()[fly_index].get_child(0))
-	_lastSlurpResult = SlurpResult.Owie
 	print("Sting: " + str(fly_index))
 
 func _box_pressed(box_index):
-	var caught = $flyman.try_catch(box_index)
+	var soundObject = AudioScene.PlaySound(AudioScene.SoundType.Slurp, null)
+	# newAudioStreamPlayer.finished.connect(queue_free.bind(newAudioStreamPlayer))
+	var caught = $flyman.try_catch(box_index, soundObject)
 	var newChamFrame = 0
 	
 	if (box_index < 2):
 		newChamFrame = 1
 	elif (box_index == 2):
 		newChamFrame = 2
-	
-	var soundObject = AudioScene.PlaySound(AudioScene.SoundType.Slurp, null)
-	# newAudioStreamPlayer.finished.connect(queue_free.bind(newAudioStreamPlayer))
-	soundObject._audioStream.finished.connect(_playResultSound.bind())
-	_blockRemovingSound = true
 	
 	$Cham.frame = newChamFrame	
 	$Cham/shadow.frame = newChamFrame
@@ -76,15 +65,6 @@ func _box_pressed(box_index):
 
 	
 	print("Score: " + str(score))
-
-func _playResultSound():
-	match _lastSlurpResult:
-		SlurpResult.Yummy:
-			AudioScene.PlaySound(AudioScene.SoundType.Snack, null)
-		SlurpResult.Owie:
-			AudioScene.PlaySound(AudioScene.SoundType.Sting, null)
-	_blockRemovingSound = false
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

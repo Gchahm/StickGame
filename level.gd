@@ -1,19 +1,26 @@
 extends Node2D
 
+class_name pair
+
 signal hit
 
 var flying = false
 var in_hitbox = false
 var is_wasp = false
 var rand = RandomNumberGenerator.new()
-const GRAVITY = 9.8
+var GRAVITY = 0.8
 var bonus_gravity = 0
 var air_time = 0.0
 var soundObject
+var flytween
 
 func _ready() -> void:
 	$fly/AnimatedSprite2D.play("bug")
 	$Bush.play("default")
+	flytween = $fly.create_tween()
+
+func increase_level():
+	GRAVITY += 1
 
 func reset_fly():
 	
@@ -51,9 +58,25 @@ func _on_box_area_entered(area):
 	reset_fly()
 
 
+var glowSprite : AnimatedSprite2D
+var glowSpriteTween : Tween
 func _on_hit_box_area_entered(area):
 	in_hitbox = true
+	glowSprite = $fly/AnimatedSprite2D.duplicate()
+	$fly.add_child(glowSprite)
+	glowSprite.show_behind_parent = true
+	glowSprite.modulate = Color(0.8, 1, 0.8)
+	glowSprite.material = CanvasItemMaterial.new()
+	glowSprite.modulate.a = 0.9
+	glowSprite.material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
+	glowSpriteTween = glowSprite.create_tween()
+	glowSpriteTween.tween_property(glowSprite, "scale", Vector2(1.2, 1.2), 0.05)
 
 
 func _on_hit_box_area_exited(area):
 	in_hitbox = false
+	glowSpriteTween.tween_property(glowSprite, "scale", Vector2(1.0, 1.0), 0.05)
+	$fly/AnimatedSprite2D.remove_child(glowSprite)
+	glowSprite.queue_free()
+	glowSprite = null
+

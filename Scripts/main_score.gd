@@ -20,8 +20,25 @@ func _ready():
 	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_max = 300
 	$ColorRect/Fireworks.visible = false
 
-func update_score(value):
+func update_score(value) -> bool:
 	targetScore += value
+	var originalLevel = level
+	
+	if targetScore > 50:
+		level = 2
+	if targetScore > 100:
+		level = 3
+	if targetScore > 200:
+		level = 4
+	if targetScore > 400:
+		level = 5
+	if targetScore > 600:
+		level = 6
+	if targetScore > 1000:
+		level = 7
+	if targetScore > 1500:
+		level = 8
+	
 	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_min += value
 	if (targetScore > score):
 		incrementAmount = abs(incrementAmount)
@@ -31,6 +48,9 @@ func update_score(value):
 	$incrementScore.start()	
 	if value > 0:
 		_motivational_speech()
+		
+	$ColorRect/MarginContainer2/HBoxContainer/Level_Value.text = str(level)
+	return level != originalLevel
 		
 func _motivational_speech():
 	if targetScore % 50 == 0:  

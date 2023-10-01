@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name flyman
+
 signal miss
 signal catch
 signal sting
@@ -13,7 +15,7 @@ const GRAVITY_INCREASE := 2
 
 @export var curve:Curve
 
-func try_catch(fly_index) -> bool:
+func try_catch(fly_index, soundObject) -> bool:
 	if fly_index >= pairs.size():
 		return false
 	
@@ -25,12 +27,20 @@ func try_catch(fly_index) -> bool:
 	
 	if pairs[fly_index].is_wasp:
 		sting.emit(fly_index)
+		soundObject._audioStream.finished.connect(_playStingSound.bind())
 	else:
 		catch.emit(fly_index)
+		soundObject._audioStream.finished.connect(_playSnackSound.bind())
 		
 	pairs[fly_index].reset_fly()
 	
 	return true
+
+func _playSnackSound():
+	AudioScene.PlaySound(AudioScene.SoundType.Snack, null)
+
+func _playStingSound():
+	AudioScene.PlaySound(AudioScene.SoundType.Sting, null)
 
 func get_fly_position(fly_index):
 	if fly_index >= pairs.size():
@@ -57,13 +67,19 @@ func _ready():
 		var child = get_child(i)
 		pairs.push_back(child)
 		child.hit.connect(emit_signal.bind("miss", i))
-		
+	
+	var gameScene : game = get_parent()
+	gameScene.level_increased.connect(_level_increased)
+	
 	timer = Timer.new()
 	add_child(timer)
 	timer.timeout.connect(flytime)
 	timer.one_shot = true
 	timer.start(curve.sample(delta_sum * 0.0005))
 
+func _level_increased():
+	for pair in pairs:
+		pair.increase_level()
 
 func flytime():
 	var fly = pairs.pick_random()

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://game.gd" id="1_lk7v8"]
 [ext_resource type="Shader" path="res://juice/mist.gdshader" id="2_07dmt"]
 [ext_resource type="PackedScene" uid="uid://wuyu6j0dw6bl" path="res://flyman.tscn" id="2_oe86f"]
-[ext_resource type="PackedScene" uid="uid://ccnoeowimp54y" path="res://Scene/main_score_overlay.tscn" id="2_qt2yf"]
+[ext_resource type="PackedScene" path="res://Scene/main_score_overlay.tscn" id="2_qt2yf"]
 [ext_resource type="Shader" path="res://juice/grad.gdshader" id="3_f215n"]
 [ext_resource type="Texture2D" uid="uid://dytfoolfwn5v0" path="res://Art/sprites/path.png" id="6_iuxaw"]
 [ext_resource type="Shader" path="res://juice/camo.gdshader" id="7_dpep2"]
