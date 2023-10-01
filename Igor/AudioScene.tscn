@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b2hp7urooiif1"]
+[gd_scene load_steps=9 format=3 uid="uid://b2hp7urooiif1"]
 
 [ext_resource type="Script" path="res://Igor/AudioScene.gd" id="1_0awpg"]
 [ext_resource type="AudioStream" uid="uid://p6x2juoctoei" path="res://Igor/Music/menu.mp3" id="2_ksvar"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://drscmswm0bui8" path="res://Igor/SoundFx/Snack.mp3" id="5_1ol4s"]
 [ext_resource type="AudioStream" uid="uid://d0j4b2d7e51w0" path="res://Igor/SoundFx/Fly.mp3" id="6_kceuj"]
 [ext_resource type="AudioStream" uid="uid://bbu6802o1evtj" path="res://Igor/SoundFx/Scream.mp3" id="7_g08kv"]
+[ext_resource type="Texture2D" uid="uid://kypkfq6yqt4x" path="res://icon.svg" id="8_t6joq"]
 
 [node name="AudioScene" type="Node2D"]
 script = ExtResource("1_0awpg")
@@ -23,7 +24,6 @@ bus = &"SoundFx"
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_xau6c")
-autoplay = true
 bus = &"Ambience"
 
 [node name="Snack" type="AudioStreamPlayer" parent="."]
@@ -33,6 +33,7 @@ bus = &"SoundFx"
 
 [node name="Fly" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_kceuj")
+volume_db = 2.811
 panning_strength = 0.0
 bus = &"SoundFx"
 
@@ -40,4 +41,9 @@ bus = &"SoundFx"
 
 [node name="Scream" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_g08kv")
+volume_db = 1.874
 panning_strength = 0.0
+
+[node name="AudioPositionVisualization" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_t6joq")

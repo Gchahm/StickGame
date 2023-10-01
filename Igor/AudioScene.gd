@@ -12,7 +12,7 @@ class SoundObject:
 
 const _minFlyPitch = 0.75
 const _maxFlyPitch = 1.25
-const _maxFliesAtOnce = 2
+const _maxFliesAtOnce = 3
 
 var _flies = []
 
@@ -82,13 +82,12 @@ func PlaySound(soundType, parentObject, speed = 0.5):
 	parentObject.add_child(soundObject._audioStream)
 
 	if (newAudioStreamPlayer is AudioStreamPlayer2D):
-		pass
-		#newAudioStreamPlayer.transform.x = 0
-		#newAudioStreamPlayer.transform.y = 0
-		#if ("transform" in parentObject):
-		#	newAudioStreamPlayer.transform = parentObject.transform
-		#else:
-		#	print("Could not determine position for object")
+		if soundType == SoundType.Fly:
+			newAudioStreamPlayer.max_distance = 1500
+			newAudioStreamPlayer.attenuation = 1.8
+			var offset = AudioScene.get_viewport_rect().size * Vector2(0.5, 0.5)
+			newAudioStreamPlayer.transform.origin = Vector2(-parentObject.global_position.x + offset.x, 0)
+		newAudioStreamPlayer.add_child($AudioPositionVisualization.duplicate())
 
 	newAudioStreamPlayer.pitch_scale = pitchScale
 	if !shouldMute:
