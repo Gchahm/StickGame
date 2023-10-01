@@ -3,6 +3,7 @@ extends Node2D
 var score := 0
 
 var _lastSlurpResult = SlurpResult.None
+var _blockRemovingSound = false
 
 enum SlurpResult {
 	None,
@@ -30,7 +31,8 @@ func randomLetterOrNumber():
 
 func _miss(fly_index):
 	score_scene.update_score(-5)
-	_lastSlurpResult = SlurpResult.None
+	if _blockRemovingSound == false:
+		_lastSlurpResult = SlurpResult.None
 	pass#$Controls.update_box(fly_index, randomLetterOrNumber())
 
 func _catch(fly_index):
@@ -57,6 +59,7 @@ func _box_pressed(box_index):
 	var soundObject = AudioScene.PlaySound(AudioScene.SoundType.Slurp, null)
 	# newAudioStreamPlayer.finished.connect(queue_free.bind(newAudioStreamPlayer))
 	soundObject._audioStream.finished.connect(_playResultSound.bind())
+	_blockRemovingSound = true
 	
 	$Cham.frame = newChamFrame	
 	$Cham/shadow.frame = newChamFrame
@@ -80,7 +83,7 @@ func _playResultSound():
 			AudioScene.PlaySound(AudioScene.SoundType.Snack, null)
 		SlurpResult.Owie:
 			AudioScene.PlaySound(AudioScene.SoundType.Sting, null)
-	
+	_blockRemovingSound = false
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
