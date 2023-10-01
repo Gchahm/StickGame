@@ -14,19 +14,19 @@ script = ExtResource("1_wicix")
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="Key" parent="Node2D" instance=ExtResource("2_0xhs6")]
-position = Vector2(276, 616)
+position = Vector2(144, 616)
 
 [node name="Key2" parent="Node2D" instance=ExtResource("2_0xhs6")]
-position = Vector2(584, 616)
+position = Vector2(440, 616)
 
 [node name="Key3" parent="Node2D" instance=ExtResource("2_0xhs6")]
-position = Vector2(880, 616)
+position = Vector2(744, 616)
 
 [node name="Key4" parent="Node2D" instance=ExtResource("2_0xhs6")]
-position = Vector2(1344, 616)
+position = Vector2(1208, 616)
 
 [node name="Key5" parent="Node2D" instance=ExtResource("2_0xhs6")]
-position = Vector2(1632, 616)
+position = Vector2(1488, 608)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1l42d")
