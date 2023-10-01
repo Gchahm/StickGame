@@ -25,6 +25,3 @@ position = Vector2(647, -245)
 
 [node name="pair5" parent="." instance=ExtResource("1_7ymxc")]
 position = Vector2(952, -252)
-
-[node name="pair6" parent="." instance=ExtResource("1_7ymxc")]
-position = Vector2(1251, -242)

@@ -5,7 +5,7 @@
 [ext_resource type="Shader" path="res://juice/mist.gdshader" id="2_07dmt"]
 [ext_resource type="PackedScene" uid="uid://wuyu6j0dw6bl" path="res://flyman.tscn" id="2_oe86f"]
 [ext_resource type="Shader" path="res://juice/grad.gdshader" id="3_f215n"]
-[ext_resource type="Texture2D" uid="uid://cjtlf46nqaceq" path="res://Art/sprites/Paths.png" id="4_ewa80"]
+[ext_resource type="Texture2D" uid="uid://dytfoolfwn5v0" path="res://Art/sprites/path.png" id="6_iuxaw"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_m7fca"]
 
@@ -76,5 +76,5 @@ position = Vector2(18, 4)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1
-texture = ExtResource("4_ewa80")
+texture = ExtResource("6_iuxaw")
 centered = false

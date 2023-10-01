@@ -12,15 +12,15 @@ var air_time = 0.0
 var soundObject
 
 func _ready() -> void:
-	$fly/AnimatedSprite2D.play()
+	$fly/AnimatedSprite2D.play("bug")
 
 func reset_fly():
 	is_wasp = rand.randf() <= 0.25
 	$fly.position = Vector2.ZERO
 	if is_wasp:
-		$fly.modulate = Color.CRIMSON
+		$fly/AnimatedSprite2D.play("wasp")
 	else:
-		$fly.modulate = Color.WHITE
+		$fly/AnimatedSprite2D.play("bug")
 	flying = false
 	soundObject.Stop()
 

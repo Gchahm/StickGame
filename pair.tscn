@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://27m8ncp3ivkp"]
+[gd_scene load_steps=18 format=3 uid="uid://27m8ncp3ivkp"]
 
 [ext_resource type="Script" path="res://level.gd" id="1_22v65"]
 [ext_resource type="Texture2D" uid="uid://bnix4qaqjdajl" path="res://Art/sprites/Bush00.png" id="2_2y2i1"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://0tsrjwwcbx7t" path="res://Art/sprites/Bush02.png" id="4_wwnei"]
 [ext_resource type="Texture2D" uid="uid://bovfngrgqtt2m" path="res://Art/sprites/Bush03.png" id="5_mv3lu"]
 [ext_resource type="Texture2D" uid="uid://bkkxyk2768whx" path="res://Art/sprites/Wasp01.png" id="7_j0485"]
+[ext_resource type="Texture2D" uid="uid://dtwrpv24aaqkd" path="res://Art/sprites/Bug_01_00.png" id="7_p6bws"]
+[ext_resource type="Texture2D" uid="uid://bxbc031kwlh6b" path="res://Art/sprites/Bug_01_01.png" id="8_kn8mj"]
 [ext_resource type="Texture2D" uid="uid://buk7wk0c88ieq" path="res://Art/sprites/Wasp02.png" id="8_lm52h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s57xm"]
@@ -37,13 +39,24 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("7_p6bws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kn8mj")
+}],
+"loop": true,
+"name": &"bug",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("7_j0485")
 }, {
 "duration": 1.0,
 "texture": ExtResource("8_lm52h")
 }],
 "loop": true,
-"name": &"default",
+"name": &"wasp",
 "speed": 24.0
 }]
 
@@ -58,7 +71,7 @@ script = ExtResource("1_22v65")
 [node name="Bush" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_s57xm")
-frame_progress = 0.438056
+frame_progress = 0.217294
 
 [node name="fly" type="Area2D" parent="."]
 script = ExtResource("2_3gtxy")
@@ -68,6 +81,7 @@ shape = SubResource("CircleShape2D_vybsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="fly"]
 sprite_frames = SubResource("SpriteFrames_utjqd")
+animation = &"bug"
 
 [node name="box" type="Area2D" parent="."]
 position = Vector2(0, 1332)
