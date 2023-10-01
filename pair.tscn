@@ -71,7 +71,7 @@ script = ExtResource("1_22v65")
 [node name="Bush" type="AnimatedSprite2D" parent="."]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_s57xm")
-frame_progress = 0.217294
+speed_scale = 0.2
 
 [node name="fly" type="Area2D" parent="."]
 script = ExtResource("2_3gtxy")

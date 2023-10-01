@@ -13,6 +13,7 @@ var soundObject
 
 func _ready() -> void:
 	$fly/AnimatedSprite2D.play("bug")
+	$Bush.play("default")
 
 func reset_fly():
 	
