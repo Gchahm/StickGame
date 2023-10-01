@@ -32,6 +32,13 @@ func try_catch(fly_index) -> bool:
 	
 	return true
 
+func get_box_hit_position(box_index):
+	if box_index >= pairs.size():
+		# Just so it doesn't crash
+		print("Non-existing node sent")
+		return Vector2(pairs[0].get_node("./HitBox").get_children()[0].global_position)
+	return Vector2(pairs[box_index].get_node("./HitBox").get_children()[0].global_position)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in get_child_count():

@@ -45,6 +45,17 @@ func _box_pressed(box_index):
 	$Cham.frame = newChamFrame	
 	$Cham/shadow.frame = newChamFrame
 	
+	var tonguePosition = $flyman.get_box_hit_position(box_index)
+	var direction = tonguePosition - $Cham.global_position
+	var angleTo = $Cham/Tongue.transform.x.angle_to(direction)
+	var yScale = pow(pow(tonguePosition.x - $Cham/Tongue.global_position.x, 2) + pow(tonguePosition.y - $Cham/Tongue.global_position.y, 2), 1.0/2.0) / 42
+	$Cham/Tongue.rotate(angleTo + (PI / 2))
+	var tween = $Cham/Tongue.create_tween()
+	tween.set_trans(Tween.TRANS_BOUNCE)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property($Cham/Tongue, "scale", Vector2(1, yScale), 0.1)
+	tween.tween_property($Cham/Tongue, "scale", Vector2.ONE, 0.1)
+	
 	print("Score: " + str(score))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
