@@ -26,11 +26,6 @@ enum SoundType {
 	Snack,
 	Fly
 }
-
-enum Music {
-	Menu,
-	Game
-}
 	
 
 func PlaySound(soundType, parentObject, speed = 0.5):
@@ -57,13 +52,6 @@ func PlaySound(soundType, parentObject, speed = 0.5):
 	newAudioStreamPlayer.play()
 	newAudioStreamPlayer.finished.connect(queue_free.bind(newAudioStreamPlayer))
 	return soundObject
-
-func ChangeMusic(music):
-	match music:
-		Music.Menu:
-			$Music.stream = load("res://Igor/menu.mp3")
-		Music.Game:
-			$Music.stream = load("res://Igor/gameplay.mp3")
 
 func PauseMusic():
 	$Music.stream_paused = true

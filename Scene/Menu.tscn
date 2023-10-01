@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dbv12i7f5jec8" path="res://Art/Background DALLE.png" id="2_64qis"]
 [ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="3_0e0jw"]
 [ext_resource type="Theme" uid="uid://cgs71wm4c5bna" path="res://Art/Themes/ButtonTheme.tres" id="3_etdlr"]
-[ext_resource type="Material" uid="uid://ma137r1dq1ss" path="res://Scene/FloatingFont.tres" id="3_fwihx"]
+[ext_resource type="Material" path="res://Scene/FloatingFont.tres" id="3_fwihx"]
 [ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="3_lmrbq"]
 
 [node name="Control" type="Control"]
