@@ -13,10 +13,9 @@ func _on_play_pressed():
 	AudioScene.ChangeMusic(AudioScene.Music.Gameplay)
 	AudioScene.StartMusic()
 	AudioScene.StartAmbientSounds()
-	get_tree().change_scene_to_file("res://Scene/main_score.tscn")
+	get_tree().change_scene_to_file("res://game.tscn")
 
 func _on_options_pressed():
-	AudioScene.PlaySound(AudioScene.SoundType.Slurp, $Title)
 	get_tree().change_scene_to_file("res://Scene/Settings.tscn")
 
 
