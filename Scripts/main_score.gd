@@ -13,10 +13,14 @@ func _ready():
 	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_max = 300
 	$ColorRect/Fireworks.visible = false
 
-func _on_plus_score_pressed():
-	targetScore += 10
-	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_min += 10
+func update_score(value):
+	targetScore += value
+	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_min += value
 	$incrementScore.start()	
+	if value > 0:
+		_motivational_speech()
+		
+func _motivational_speech():
 	if targetScore % 50 == 0:  
 		var randomIndex = randi() % motivationalWords.size()  
 		var randomMotivationalWord = motivationalWords[randomIndex]  
@@ -24,6 +28,12 @@ func _on_plus_score_pressed():
 		$ColorRect/TempMessage.visible = true  # Show the score text  
 		$ColorRect/Fireworks.visible = true
 		$scoreTextTimer.start()  # Start the timer
+		
+func _on_plus_score_pressed():
+	update_score(10)
+
+func _on_minus_score_pressed():
+	update_score(-1000)
 
 func _on_increment_score_timeout():
 	score += incrementAmount
@@ -38,10 +48,6 @@ func _on_score_text_timer_timeout():
 	$ColorRect/Fireworks.visible = false
 
 
-func _on_minus_score_pressed():
-	score -= 1000
-	$ColorRect/MarginContainer/Fire/GPUParticles2D.process_material.initial_velocity_min -= 100
-	$ColorRect/MarginContainer/HBoxContainer/Score_Value.text = str(score)
 
 func _on_plus_level_pressed():
 	level += 1
