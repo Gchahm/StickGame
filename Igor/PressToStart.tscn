@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://cujpgd2lgfkvv"]
+
+[ext_resource type="Script" path="res://Igor/PressToStart.gd" id="1_4k8y6"]
+[ext_resource type="Texture2D" uid="uid://dbv12i7f5jec8" path="res://Art/Background DALLE.png" id="2_cnsxm"]
+[ext_resource type="Material" uid="uid://ma137r1dq1ss" path="res://Scene/FloatingFont.tres" id="3_lhtwp"]
+[ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="4_u7bhn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pdy6"]
+size = Vector2(200, 200)
+
+[node name="PressToStart" type="Node2D"]
+script = ExtResource("1_4k8y6")
+
+[node name="BackgroundDalle2" type="Sprite2D" parent="."]
+position = Vector2(960, 544.5)
+scale = Vector2(2.28671, 2.24551)
+texture = ExtResource("2_cnsxm")
+region_enabled = true
+region_rect = Rect2(34.1705, 223.173, 858.495, 501.827)
+
+[node name="Title" type="Label" parent="."]
+material = ExtResource("3_lhtwp")
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 272.0
+offset_top = 400.0
+offset_right = 1553.0
+offset_bottom = 566.0
+grow_horizontal = 2
+theme = ExtResource("4_u7bhn")
+theme_override_colors/font_color = Color(0.79097, 0.589717, 1.15514e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 12
+theme_override_constants/shadow_offset_y = 12
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 135
+text = "Click here to start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+position = Vector2(976, 506)
+scale = Vector2(10.36, 7.56)
+shape = SubResource("RectangleShape2D_8pdy6")
+script = ExtResource("1_4k8y6")
+
+[node name="LinkButton" type="LinkButton" parent="."]
+offset_left = -76.0
+offset_top = -51.0
+offset_right = -36.0
+offset_bottom = -11.0
+scale = Vector2(52.36, 30.04)
+script = ExtResource("1_4k8y6")
+
+[connection signal="pressed" from="TouchScreenButton" to="TouchScreenButton" method="_on_pressed"]
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_pressed"]

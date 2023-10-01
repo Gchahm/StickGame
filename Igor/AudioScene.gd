@@ -26,11 +26,22 @@ enum SoundType {
 	Snack,
 	Fly
 }
-	
+
+enum Music {
+	Menu,
+	Gameplay
+}
 
 func PlaySound(soundType, parentObject, speed = 0.5):
 	var playerToUse
 	var pitchScale = 1.0
+
+	if parentObject != null && !("transform" in parentObject):
+		parentObject = $Container
+		print("Object passed in does not support positioning, assuming global")
+	
+	if parentObject == null:
+		parentObject = $Container
 	
 	match soundType:
 		SoundType.Slurp:
@@ -43,15 +54,29 @@ func PlaySound(soundType, parentObject, speed = 0.5):
 	
 	var newAudioStreamPlayer = playerToUse.duplicate()
 	var soundObject = SoundObject.new(newAudioStreamPlayer)
+	
 	parentObject.add_child(soundObject._audioStream)
 
 	if (newAudioStreamPlayer is AudioStreamPlayer2D):
-		newAudioStreamPlayer.transform = parentObject.transform
+		pass
+		#newAudioStreamPlayer.transform.x = 0
+		#newAudioStreamPlayer.transform.y = 0
+		#if ("transform" in parentObject):
+		#	newAudioStreamPlayer.transform = parentObject.transform
+		#else:
+		#	print("Could not determine position for object")
 
-	newAudioStreamPlayer.pitchScale = pitchScale
+	newAudioStreamPlayer.pitch_scale = pitchScale
 	newAudioStreamPlayer.play()
 	newAudioStreamPlayer.finished.connect(queue_free.bind(newAudioStreamPlayer))
 	return soundObject
+
+func ChangeMusic(music):
+	match music:
+		Music.Menu:
+			$Music.stream = load("res://Igor/Music/menu.mp3")
+		Music.Gameplay:
+			$Music.stream = load("res://Igor/Music/gameplay.mp3")
 
 func PauseMusic():
 	$Music.stream_paused = true
