@@ -15,6 +15,13 @@ func _ready() -> void:
 	$fly/AnimatedSprite2D.play("bug")
 
 func reset_fly():
+	
+	flying = false
+	$fly/AnimatedSprite2D.stop()
+	
+	await Juice.flash($fly).finished
+
+	
 	is_wasp = rand.randf() <= 0.25
 	$fly.position = Vector2.ZERO
 	if is_wasp:
