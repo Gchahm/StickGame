@@ -48,9 +48,9 @@ vertical_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0515625
-anchor_top = 0.341667
+anchor_top = 0.267593
 anchor_right = 0.310156
-anchor_bottom = 0.764008
+anchor_bottom = 0.74549
 offset_left = 21.0
 offset_right = -144.5
 offset_bottom = -279.129
@@ -72,10 +72,15 @@ text = "Play"
 layout_mode = 2
 text = "Options"
 
+[node name="HighScore" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "High Scores"
+
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HighScore" to="." method="_on_high_score_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

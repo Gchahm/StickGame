@@ -68,6 +68,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MotivationalMessage" type="Label" parent="ColorRect/Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -125,6 +126,23 @@ theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 80
 text = "Hi-Score:"
 
+[node name="SaveContainer" type="HBoxContainer" parent="ColorRect/Panel"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.840001, 1)
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect/Panel/SaveContainer"]
+layout_mode = 2
+placeholder_text = "Your name"
+
+[node name="Save" type="Button" parent="ColorRect/Panel/SaveContainer"]
+layout_mode = 2
+theme = ExtResource("2_d7j4e")
+theme_override_font_sizes/font_size = 80
+text = "   Save   "
+
 [node name="HBox" type="HBoxContainer" parent="ColorRect/Panel"]
 layout_mode = 1
 anchors_preset = 7
@@ -151,5 +169,6 @@ theme = ExtResource("2_d7j4e")
 theme_override_font_sizes/font_size = 80
 text = "   Quit   "
 
+[connection signal="pressed" from="ColorRect/Panel/SaveContainer/Save" to="." method="_on_save_score"]
 [connection signal="pressed" from="ColorRect/Panel/HBox/Retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="ColorRect/Panel/HBox/Quit" to="." method="_on_quit_pressed"]

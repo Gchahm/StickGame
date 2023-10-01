@@ -19,6 +19,10 @@ func _on_play_pressed():
 func _on_options_pressed():
 	audioscene.Slurp()
 	get_tree().change_scene_to_file("res://Scene/Settings.tscn")
+	
+
+func _on_high_score_pressed():
+	get_tree().change_scene_to_file("res://Scene/HighScore.tscn");
 
 
 func _on_quit_pressed():
