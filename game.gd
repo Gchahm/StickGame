@@ -1,6 +1,5 @@
 extends Node2D
 
-var score := 0
 @onready var score_scene = $Main_Score
 
 # Called when the node enters the scene tree for the first time.
@@ -45,7 +44,6 @@ func _box_pressed(box_index):
 	$Cham.frame = newChamFrame	
 	$Cham/shadow.frame = newChamFrame
 	
-	print("Score: " + str(score))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
