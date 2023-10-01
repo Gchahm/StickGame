@@ -2,17 +2,13 @@ extends Node
 
 var score: int = 0
 var level: int = 1
-var scores
 var targetScore: int = 0
 var motivationalWords = ["Madonna!", "Superb!", "Flibbergabber!", "Unbeliveable!", "So good!", "Chicken!", "Professional!"]  
 var incrementAmount: int = 1
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
-	scores = load_scores()
-	
 	$GameOverScreen.visible = false
-	$GameOverScreen.set_scores(scores)
 	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_min = 300
 	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_max = 300
 	$ColorRect/Fireworks.visible = false
@@ -51,41 +47,10 @@ func _on_plus_level_pressed():
 	level += 1
 	$MarginContainer/HBoxContainer/Level_Value.text = str(level)
 
-func save_game():
-	var save_file = FileAccess.open("user://save.data", FileAccess.WRITE)
-	save_file.store_32(highscore)
-
 func _on_minus_level_pressed():
 	level -= 1
 	$ColorRect/MarginContainer2/HBoxContainer/Level_Value.text = str(level)
 
 func _on_game_over_pressed():
-	var high_score = int(scores[0][1])
-	
-	$GameOverScreen.display_scores(score, high_score)
+	$GameOverScreen.display_scores(score)
 	$GameOverScreen.visible = true
-
-
-func load_scores():
-	var scores = []
-	var file = FileAccess.open("user://scores.data", FileAccess.READ)
-	
-	if file:
-		while !file.eof_reached():
-			var pair = file.get_csv_line()
-			if len(pair) == 2:
-				scores.append(pair)
-	else:
-		print("Create new file")
-		file = FileAccess.open("user://scores.data", FileAccess.WRITE)
-		scores.append(["Noob", "0"])
-	
-	file.close()
-	scores.sort_custom(sort_scores)
-	return scores
-	
-func sort_scores(a, b) -> bool:
-	return int(a[1]) > int(b[1])
-
-
-

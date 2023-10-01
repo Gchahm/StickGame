@@ -133,15 +133,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.840001, 1)
 
-[node name="TextEdit" type="TextEdit" parent="ColorRect/Panel/SaveContainer"]
-layout_mode = 2
-placeholder_text = "Your name"
-
 [node name="Save" type="Button" parent="ColorRect/Panel/SaveContainer"]
 layout_mode = 2
 theme = ExtResource("2_d7j4e")
 theme_override_font_sizes/font_size = 80
 text = "   Save   "
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect/Panel/SaveContainer"]
+layout_mode = 2
+theme = ExtResource("1_ia3yo")
+theme_override_font_sizes/font_size = 64
 
 [node name="HBox" type="HBoxContainer" parent="ColorRect/Panel"]
 layout_mode = 1
