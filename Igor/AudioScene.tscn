@@ -28,7 +28,7 @@ bus = &"Ambience"
 
 [node name="Snack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1ol4s")
-volume_db = 5.622
+volume_db = 8.433
 bus = &"SoundFx"
 
 [node name="Fly" type="AudioStreamPlayer2D" parent="."]
@@ -41,7 +41,7 @@ bus = &"SoundFx"
 
 [node name="Scream" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_g08kv")
-volume_db = 1.874
+volume_db = 3.748
 panning_strength = 0.0
 
 [node name="AudioPositionVisualization" type="Sprite2D" parent="."]

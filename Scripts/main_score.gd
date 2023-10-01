@@ -23,6 +23,11 @@ func _ready():
 func update_score(value):
 	targetScore += value
 	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_min += value
+	if (targetScore > score):
+		incrementAmount = abs(incrementAmount)
+	else:
+		incrementAmount = -abs(incrementAmount)
+		
 	$incrementScore.start()	
 	if value > 0:
 		_motivational_speech()
@@ -45,9 +50,7 @@ func _on_minus_score_pressed():
 func _on_increment_score_timeout():
 	score += incrementAmount
 	$ColorRect/MarginContainer/HBoxContainer/Score_Value.text = str(score)
-	if score < targetScore:  
-		$incrementScore.start()  
-	else:  
+	if (incrementAmount > 0 && score >= targetScore) || (incrementAmount < 0  && score <= targetScore):
 		$incrementScore.stop()  
 
 func _on_score_text_timer_timeout():
