@@ -28,7 +28,7 @@ bus = &"Ambience"
 
 [node name="Snack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1ol4s")
-volume_db = 1.874
+volume_db = 5.622
 bus = &"SoundFx"
 
 [node name="Fly" type="AudioStreamPlayer2D" parent="."]
