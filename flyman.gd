@@ -32,6 +32,18 @@ func try_catch(fly_index) -> bool:
 	
 	return true
 
+func get_fly_position(fly_index):
+	if fly_index >= pairs.size():
+		return false
+	
+	if fly_index < 0:
+		return false
+	
+	if not pairs[fly_index].in_hitbox:
+		return get_box_hit_position(fly_index)
+	
+	return pairs[fly_index].get_node("./fly").global_position
+
 func get_box_hit_position(box_index):
 	if box_index >= pairs.size():
 		# Just so it doesn't crash

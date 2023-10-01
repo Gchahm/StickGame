@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dytfoolfwn5v0" path="res://Art/sprites/path.png" id="6_iuxaw"]
 [ext_resource type="Shader" path="res://juice/camo.gdshader" id="7_dpep2"]
 [ext_resource type="Texture2D" uid="uid://bvepwl0t0umwb" path="res://Art/sprites/MicrosoftTeams-image (15).png" id="7_ehf2k"]
-[ext_resource type="Texture2D" uid="uid://bbpn2a88gqv7r" path="res://Art/sprites/tongue.png" id="10_qbwha"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_m7fca"]
 
@@ -302,6 +301,10 @@ turbulence_influence_min = 0.01
 turbulence_initial_displacement_min = -54.2
 turbulence_initial_displacement_max = 19.7
 
+[sub_resource type="Curve" id="Curve_t01mr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.536404, 0.390909), 0.0, 0.0, 0, 0, Vector2(0.950966, 0.827273), 0.0, 0.0, 0, 0, Vector2(1, 0.690909), 0.0, 0.0, 0, 0]
+point_count = 4
+
 [sub_resource type="Gradient" id="Gradient_iuxky"]
 interpolation_mode = 1
 offsets = PackedFloat32Array(0, 0.331325, 0.650602)
@@ -382,7 +385,15 @@ z_index = -2
 texture = ExtResource("6_iuxaw")
 centered = false
 
+[node name="Tongue" type="Line2D" parent="."]
+position = Vector2(968, 836)
+points = PackedVector2Array(0, 0, 0, 0)
+width = 20.0
+width_curve = SubResource("Curve_t01mr")
+default_color = Color(1, 0, 0.580392, 1)
+
 [node name="Cham" type="Sprite2D" parent="."]
+modulate = Color(100, 100, 1, 1)
 material = SubResource("ShaderMaterial_qqmyj")
 position = Vector2(954, 980)
 scale = Vector2(0.603615, 0.603615)
@@ -395,9 +406,3 @@ z_index = -1
 position = Vector2(-29.8204, -9.94006)
 texture = ExtResource("7_ehf2k")
 hframes = 3
-
-[node name="Tongue" type="Sprite2D" parent="Cham"]
-z_index = -1
-position = Vector2(31.4769, -226.966)
-texture = ExtResource("10_qbwha")
-offset = Vector2(1.65662, -31.4769)
