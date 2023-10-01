@@ -10,35 +10,36 @@ colors = PackedColorArray(0.731626, 0.40122, 3.85046e-07, 1, 1, 0.0899271, 0.003
 gradient = SubResource("Gradient_5hw5n")
 
 [sub_resource type="Curve" id="Curve_n5j2k"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.34131, 0.574113), 0.0, 0.0, 0, 0, Vector2(0.585642, 0.298539), 0.0, 0.0, 0, 0, Vector2(0.746851, 0.131524), 0.0, 0.0, 0, 0, Vector2(0.915617, 0.156576), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.0563674), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 7
+_data = [Vector2(0.0113065, 0.156576), 0.0, 0.0, 0, 0, Vector2(0.159548, 0.231733), 0.0, 0.0, 0, 0, Vector2(0.370603, 0.340292), 0.0, 0.0, 0, 0, Vector2(0.559045, 0.323591), 0.0, 0.0, 0, 0, Vector2(0.712312, 0.206681), 0.0, 0.0, 0, 0, Vector2(0.805276, 0.0647181), 0.0, 0.0, 0, 0, Vector2(0.835427, 0.0730689), 0.0, 0.0, 0, 0, Vector2(0.933417, 0), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.0563674), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 10
 
 [sub_resource type="CurveTexture" id="CurveTexture_u1y73"]
-width = 2048
+width = 4096
 curve = SubResource("Curve_n5j2k")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ltgxe"]
 lifetime_randomness = 1.0
 particle_flag_disable_z = true
 direction = Vector3(0, -1, 0)
-spread = 10.0
+spread = 86.06
 gravity = Vector3(0, 0, 0)
-initial_velocity_min = 400.0
-initial_velocity_max = 400.0
+initial_velocity_min = 300.0
+initial_velocity_max = 300.0
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
 tangential_accel_min = 100.0
 tangential_accel_max = 150.0
+angle_min = 150.0
 angle_max = 360.0
-scale_min = 0.5
-scale_max = 0.5
+scale_min = 0.4
+scale_max = 0.4
 scale_curve = SubResource("CurveTexture_u1y73")
 color_ramp = SubResource("GradientTexture1D_4ajt5")
 
 [node name="Fire" type="Node2D"]
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="Fire" type="GPUParticles2D" parent="."]
 position = Vector2(934, 830)
-amount = 250
+amount = 600
 process_material = SubResource("ParticleProcessMaterial_ltgxe")
 texture = ExtResource("1_5j8fl")

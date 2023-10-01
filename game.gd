@@ -24,14 +24,27 @@ func _miss(fly_index):
 
 func _catch(fly_index):
 	score += 10
+	AudioScene.PlaySound(AudioScene.SoundType.Snack, null)
 	print("Catch: " + str(fly_index))
 
 func _sting(fly_index):
 	score -= 20
+	# If my code is right, the second param will be the "fly" object for the relevant key
+	AudioScene.PlaySound(AudioScene.SoundType.Sting, $flyman.get_children()[fly_index].get_child(0))
 	print("Sting: " + str(fly_index))
 
 func _box_pressed(box_index):
 	$flyman.try_catch(box_index)
+	var newChamFrame = 0
+	
+	if (box_index < 2):
+		newChamFrame = 1
+	elif (box_index == 2):
+		newChamFrame = 2
+	
+	$Cham.frame = newChamFrame	
+	$Cham/shadow.frame = newChamFrame
+	
 	print("Score: " + str(score))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

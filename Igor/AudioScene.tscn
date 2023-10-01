@@ -1,28 +1,49 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2hp7urooiif1"]
+[gd_scene load_steps=9 format=3 uid="uid://b2hp7urooiif1"]
 
 [ext_resource type="Script" path="res://Igor/AudioScene.gd" id="1_0awpg"]
-[ext_resource type="AudioStream" uid="uid://3ry8wu6gyf3m" path="res://letter-from-brazil-168685.mp3" id="2_my60h"]
+[ext_resource type="AudioStream" uid="uid://p6x2juoctoei" path="res://Igor/Music/menu.mp3" id="2_ksvar"]
 [ext_resource type="AudioStream" uid="uid://0p122qiaykmu" path="res://Igor/SoundFx/573583__breviceps__cartoon-slurp.wav" id="3_wuvvy"]
 [ext_resource type="AudioStream" uid="uid://d314sasolegra" path="res://Igor/SoundFx/Rainforest.mp3" id="4_xau6c"]
 [ext_resource type="AudioStream" uid="uid://drscmswm0bui8" path="res://Igor/SoundFx/Snack.mp3" id="5_1ol4s"]
+[ext_resource type="AudioStream" uid="uid://d0j4b2d7e51w0" path="res://Igor/SoundFx/Fly.mp3" id="6_kceuj"]
+[ext_resource type="AudioStream" uid="uid://bbu6802o1evtj" path="res://Igor/SoundFx/Scream.mp3" id="7_g08kv"]
+[ext_resource type="Texture2D" uid="uid://kypkfq6yqt4x" path="res://icon.svg" id="8_t6joq"]
 
 [node name="AudioScene" type="Node2D"]
 script = ExtResource("1_0awpg")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_my60h")
-autoplay = true
+stream = ExtResource("2_ksvar")
 bus = &"Music"
 
 [node name="Slurp" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_wuvvy")
+volume_db = 13.117
+panning_strength = 0.0
 bus = &"SoundFx"
 
 [node name="Ambience" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_xau6c")
-autoplay = true
 bus = &"Ambience"
 
 [node name="Snack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_1ol4s")
+volume_db = 1.874
 bus = &"SoundFx"
+
+[node name="Fly" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_kceuj")
+volume_db = 2.811
+panning_strength = 0.0
+bus = &"SoundFx"
+
+[node name="Container" type="Node" parent="."]
+
+[node name="Scream" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_g08kv")
+volume_db = 1.874
+panning_strength = 0.0
+
+[node name="AudioPositionVisualization" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_t6joq")

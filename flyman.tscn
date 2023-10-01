@@ -12,16 +12,16 @@ script = ExtResource("1_oxciu")
 curve = SubResource("Curve_hp5fl")
 
 [node name="pair1" parent="." instance=ExtResource("1_7ymxc")]
-position = Vector2(-337, 7)
+position = Vector2(-368, -238)
 
 [node name="pair2" parent="." instance=ExtResource("1_7ymxc")]
-position = Vector2(-208, 5)
+position = Vector2(-72, -238)
 
 [node name="pair3" parent="." instance=ExtResource("1_7ymxc")]
-position = Vector2(-77, 0)
+position = Vector2(240, -244)
 
 [node name="pair4" parent="." instance=ExtResource("1_7ymxc")]
-position = Vector2(49, 8)
+position = Vector2(647, -245)
 
 [node name="pair5" parent="." instance=ExtResource("1_7ymxc")]
-position = Vector2(175, 7)
+position = Vector2(952, -252)

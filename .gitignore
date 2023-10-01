@@ -1,6 +1,9 @@
 # No tmp files
 *.tmp
 
+# No export
+Export/*
+
 # Godot 4+ specific ignores
 .godot/
 
