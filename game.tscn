@@ -391,6 +391,5 @@ hframes = 3
 modulate = Color(0, 0, 0, 0.407843)
 z_index = -1
 position = Vector2(-29.8204, -9.94006)
-scale = Vector2(1, 1)
 texture = ExtResource("7_ehf2k")
 hframes = 3
