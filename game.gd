@@ -1,6 +1,7 @@
 extends Node2D
 
 var score := 0
+
 var _lastSlurpResult = SlurpResult.None
 
 enum SlurpResult {
@@ -9,6 +10,7 @@ enum SlurpResult {
 	Owie
 }
 	
+@onready var score_scene = $Main_Score
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,17 +29,17 @@ func randomLetterOrNumber():
 	return random_char
 
 func _miss(fly_index):
-	score -= 5
+	score_scene.update_score(-5)
 	_lastSlurpResult = SlurpResult.None
 	pass#$Controls.update_box(fly_index, randomLetterOrNumber())
 
 func _catch(fly_index):
-	score += 10
+	score_scene.update_score(10)
 	_lastSlurpResult = SlurpResult.Yummy
 	print("Catch: " + str(fly_index))
 
 func _sting(fly_index):
-	score -= 20
+	score_scene.update_score(-20)
 	# If my code is right, the second param will be the "fly" object for the relevant key
 	#AudioScene.PlaySound(AudioScene.SoundType.Sting, $flyman.get_children()[fly_index].get_child(0))
 	_lastSlurpResult = SlurpResult.Owie
