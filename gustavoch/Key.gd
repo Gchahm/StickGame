@@ -3,13 +3,13 @@ extends Node2D
 var tween
 var color_tween
 
-@onready var pressSprite = $LogTest
+@onready var pressSprite = $Log
 
 func _ready():
 	pressSprite.set_self_modulate(Color(1,1,1,1))
 
 func set_text(value):
-	$Sprite2D/Label.text = value
+	$Log/Label.text = value
 
 func pressed(is_hit):
 	run_click_animation()
