@@ -12,12 +12,22 @@ var GRAVITY = 0.8
 var bonus_gravity = 0
 var air_time = 0.0
 var soundObject
-var flytween
+
+var glowMaterial = CanvasItemMaterial.new()
+var glowSprite : AnimatedSprite2D
+var glowSpriteTween : Tween
 
 func _ready() -> void:
 	$fly/AnimatedSprite2D.play("bug")
 	$Bush.play("default")
-	flytween = $fly.create_tween()
+	glowMaterial.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
+	glowSprite = $fly/AnimatedSprite2D.duplicate()
+	glowSprite.play("bug")
+	$fly.add_child(glowSprite)
+	glowSprite.show_behind_parent = true
+	glowSprite.modulate = Color(0.2, 1, 0.2)
+	glowSprite.material = glowMaterial
+	glowSprite.modulate.a = 0.0
 
 func increase_level():
 	GRAVITY += 1
@@ -34,8 +44,10 @@ func reset_fly():
 	$fly.position = Vector2.ZERO
 	if is_wasp:
 		$fly/AnimatedSprite2D.play("wasp")
+		glowSprite.modulate = Color(1, 0.2, 0.2, 0)
 	else:
 		$fly/AnimatedSprite2D.play("bug")
+		glowSprite.modulate = Color(0.2, 1, 0.2, 0)
 	flying = false
 	soundObject.Stop()
 
@@ -57,26 +69,18 @@ func _on_box_area_entered(area):
 	air_time = 0.0
 	reset_fly()
 
-
-var glowSprite : AnimatedSprite2D
-var glowSpriteTween : Tween
 func _on_hit_box_area_entered(area):
 	in_hitbox = true
-	glowSprite = $fly/AnimatedSprite2D.duplicate()
-	$fly.add_child(glowSprite)
-	glowSprite.show_behind_parent = true
-	glowSprite.modulate = Color(0.8, 1, 0.8)
-	glowSprite.material = CanvasItemMaterial.new()
 	glowSprite.modulate.a = 0.9
-	glowSprite.material.blend_mode = CanvasItemMaterial.BLEND_MODE_ADD
 	glowSpriteTween = glowSprite.create_tween()
-	glowSpriteTween.tween_property(glowSprite, "scale", Vector2(1.2, 1.2), 0.05)
+	glowSpriteTween.tween_property(glowSprite, "scale", Vector2(1.3, 1.3), 0.1)
 
 
 func _on_hit_box_area_exited(area):
 	in_hitbox = false
 	glowSpriteTween.tween_property(glowSprite, "scale", Vector2(1.0, 1.0), 0.05)
-	$fly/AnimatedSprite2D.remove_child(glowSprite)
-	glowSprite.queue_free()
-	glowSprite = null
+	glowSprite.modulate.a = 0.0
+	#$fly/AnimatedSprite2D.remove_child(glowSprite)
+	#glowSprite.queue_free()
+	#glowSprite = null
 
