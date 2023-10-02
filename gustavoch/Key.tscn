@@ -1,14 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://bhvh5olqcsod3"]
 
 [ext_resource type="Script" path="res://gustavoch/Key.gd" id="1_r5nnq"]
-[ext_resource type="Texture2D" uid="uid://cvsgk7kysdbmm" path="res://Art/sprites/Log.png" id="2_4l5lo"]
+[ext_resource type="Texture2D" uid="uid://cs1ggaw7g6ng8" path="res://Art/sprites/LogSolo.png" id="2_655s4"]
 
 [node name="Key" type="Node2D"]
 position = Vector2(62, 43)
 script = ExtResource("1_r5nnq")
 
 [node name="Log" type="Sprite2D" parent="."]
-texture = ExtResource("2_4l5lo")
+texture = ExtResource("2_655s4")
 offset = Vector2(0, -130)
 
 [node name="Label" type="Label" parent="Log"]

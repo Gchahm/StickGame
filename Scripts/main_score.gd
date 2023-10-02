@@ -1,6 +1,7 @@
 extends Node
 
 var score: int = 0
+var life: int = 5
 var level: int = 1
 var highscore
 var targetScore: int = 0
@@ -19,6 +20,17 @@ func _ready():
 	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_min = 300
 	$ColorRect/MarginContainer/Fire/Fire.process_material.initial_velocity_max = 300
 	$ColorRect/Fireworks.visible = false
+
+func receive_life_damage():
+	life -= 1
+	if life <= 0:
+		$ColorRect/LivesUI/HBoxContainer/Life.text = "x0"
+		GlobalStats.currentScore = score
+		var scene = load("res://Scene/game_over_screen.tscn")
+		get_tree().change_scene_to_packed(scene)
+		
+	else:
+		$ColorRect/LivesUI/HBoxContainer/Life.text = "x" + str(life)
 
 func update_score(value) -> bool:
 	targetScore += value

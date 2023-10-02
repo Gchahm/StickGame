@@ -25,7 +25,7 @@ func randomLetterOrNumber():
 	return random_char
 
 func _miss(fly_index):
-
+	score_scene.receive_life_damage()
 	score_scene.update_score(-5)
 	pass#$Controls.update_box(fly_index, randomLetterOrNumber())
 

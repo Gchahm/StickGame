@@ -22,6 +22,7 @@ buses/default_bus_layout="res://MasterAudioBusLayout.tres"
 [autoload]
 
 AudioScene="*res://Igor/AudioScene.tscn"
+GlobalStats="*res://Scripts/GlobalStats.gd"
 
 [display]
 

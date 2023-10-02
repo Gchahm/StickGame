@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ccnoeowimp54y"]
+[gd_scene load_steps=13 format=3 uid="uid://ccnoeowimp54y"]
 
 [ext_resource type="Script" path="res://Scripts/main_score.gd" id="1_fp5i8"]
 [ext_resource type="Theme" uid="uid://bqko71y06oli4" path="res://Art/Themes/FontTheme.tres" id="2_evwq3"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://bhpv1c7hykjgo" path="res://Art/fonts/Xolonium-Regular.ttf" id="4_slj51"]
 [ext_resource type="Material" uid="uid://ma137r1dq1ss" path="res://Scene/FloatingFont.tres" id="5_fcvxy"]
 [ext_resource type="PackedScene" uid="uid://d01nnt3p1ip27" path="res://Scene/fireworks.tscn" id="6_0j6el"]
+[ext_resource type="Texture2D" uid="uid://bbigrqywbhnn7" path="res://Art/ChameleonFace.png" id="7_t47ea"]
 [ext_resource type="PackedScene" uid="uid://cwn64tc4y7o7y" path="res://Scene/game_over_screen.tscn" id="8_yyfaf"]
 
 [sub_resource type="Gradient" id="Gradient_oee4m"]
@@ -145,6 +146,34 @@ vertical_alignment = 1
 [node name="Fireworks" parent="ColorRect" instance=ExtResource("6_0j6el")]
 visible = false
 position = Vector2(265, -600)
+
+[node name="LivesUI" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 98.0
+offset_top = -206.0
+offset_right = 340.0
+offset_bottom = -50.0
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/LivesUI"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect/LivesUI/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("7_t47ea")
+
+[node name="Life" type="Label" parent="ColorRect/LivesUI/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_evwq3")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_font_sizes/font_size = 70
+text = "x5"
 
 [node name="GameOverScreen" parent="." instance=ExtResource("8_yyfaf")]
 visible = false
