@@ -40,10 +40,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -363.0
-offset_top = -2.0
-offset_right = -50.0
-offset_bottom = 146.0
+offset_left = -405.0
+offset_top = 18.0
+offset_right = -92.0
+offset_bottom = 166.0
 grow_horizontal = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer2"]
@@ -80,19 +80,19 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -553.0
-offset_top = -109.0
-offset_right = -59.0
-offset_bottom = 39.0
+offset_left = -580.0
+offset_top = -183.0
+offset_right = -86.0
+offset_bottom = -35.0
 grow_horizontal = 0
 grow_vertical = 0
 size_flags_horizontal = 0
 
 [node name="Fire" parent="ColorRect/MarginContainer" instance=ExtResource("3_4ibx4")]
-position = Vector2(-677, -704)
+position = Vector2(-665, -719)
 
 [node name="Fire2" parent="ColorRect/MarginContainer" instance=ExtResource("3_4ibx4")]
-position = Vector2(-677, -704)
+position = Vector2(-622, -715)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
@@ -152,10 +152,10 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 98.0
-offset_top = -206.0
-offset_right = 340.0
-offset_bottom = -50.0
+offset_left = 102.0
+offset_top = -193.0
+offset_right = 344.0
+offset_bottom = -37.0
 grow_vertical = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/LivesUI"]

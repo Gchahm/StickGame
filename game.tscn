@@ -343,6 +343,7 @@ script = ExtResource("1_lk7v8")
 
 [node name="mist" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_v0uc6")
+offset_top = -7.0
 offset_right = 1920.0
 offset_bottom = 1086.0
 size_flags_horizontal = 4
@@ -351,6 +352,7 @@ color = Color(0.682353, 0.698039, 1, 1)
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_nr1sg")
+offset_top = -10.0
 offset_right = 1913.0
 offset_bottom = 1077.0
 size_flags_horizontal = 4
@@ -360,7 +362,7 @@ mouse_filter = 2
 [node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_csn1m")
 offset_left = -10.0
-offset_top = 1.0
+offset_top = -11.0
 offset_right = 1927.0
 offset_bottom = 1085.0
 size_flags_horizontal = 4
