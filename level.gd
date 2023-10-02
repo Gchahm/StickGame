@@ -78,6 +78,8 @@ func _on_hit_box_area_entered(area):
 
 func _on_hit_box_area_exited(area):
 	in_hitbox = false
+	glowSpriteTween.kill()
+	glowSpriteTween = glowSprite.create_tween()
 	glowSpriteTween.tween_property(glowSprite, "scale", Vector2(1.0, 1.0), 0.05)
 	glowSprite.modulate.a = 0.0
 	#$fly/AnimatedSprite2D.remove_child(glowSprite)

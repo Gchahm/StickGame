@@ -7,7 +7,7 @@ func _ready():
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_ELASTIC)
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(self, "scale", Vector2.ONE, 0.1)
+	tween.tween_property(self, "scale", Vector2.ONE * 3.0, 0.1)
 
 	tween.set_trans(Tween.TRANS_CIRC)
 	tween.set_ease(Tween.EASE_OUT)

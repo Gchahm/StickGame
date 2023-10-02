@@ -7,8 +7,9 @@ class SoundObject:
 		_audioStream = audioStream
 	
 	func Stop():
-		_audioStream.stop()
-		_audioStream.emit_signal("finished")
+		if is_instance_valid(_audioStream):
+			_audioStream.stop()
+			_audioStream.emit_signal("finished")
 
 const _minFlyPitch = 0.75
 const _maxFlyPitch = 1.25
@@ -92,7 +93,7 @@ func PlaySound(soundType, parentObject, speed = 0.5):
 	newAudioStreamPlayer.pitch_scale = pitchScale
 	if !shouldMute:
 		newAudioStreamPlayer.play()
-	newAudioStreamPlayer.finished.connect(queue_free.bind(newAudioStreamPlayer))
+	newAudioStreamPlayer.finished.connect(newAudioStreamPlayer.queue_free)
 	return soundObject
 
 func ChangeMusic(music):

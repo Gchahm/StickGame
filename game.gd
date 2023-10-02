@@ -30,6 +30,9 @@ func _miss(fly_index):
 	pass#$Controls.update_box(fly_index, randomLetterOrNumber())
 
 func _catch(fly_index):
+	var fly_position = $flyman.get_fly_position(fly_index)
+	PointPopin.popin(self, fly_position, "NOM")
+
 	if score_scene.update_score(10) == true:
 		level_increased.emit()
 	print("Catch: " + str(fly_index))
